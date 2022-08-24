@@ -8,4 +8,5 @@ for key, val in counts.items():
 lst = sorted(lst, reverse = True)
 print(lst)
 
+
 print(sorted([(v,k) for k,v in counts.keys()]))
