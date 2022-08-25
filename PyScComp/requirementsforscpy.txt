@@ -1,3 +1,5 @@
 Libraries:
     socket Library (getting data from the internet)
+    urllib Library (does socket work and makes web pages look like a file)
+        
 
