@@ -3,6 +3,7 @@ Libraries:
     socket Library (getting data from the internet)
     urllib Library (does socket work and makes web pages look like a file)
     Beautiful Soup
+    json Library 
 
 XML and JSON:
     XML: (document for structured information)
@@ -17,4 +18,6 @@ XML and JSON:
 
         XML Schema:
             Legality Contract for XML
-            
+
+    JSON: (document for structured information)  
+        simpler and more common than XML
