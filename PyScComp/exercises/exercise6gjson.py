@@ -29,4 +29,6 @@ while True:
     lat = js["results"][0]["geometry"]["location"]["lat"]
     lng = js["resutls"][0]["geometry"]["location"]["lng"]
     print('lat', lat, 'lng', lng)
+    location = js['result'][0]['formatted_address']
+    print(location)
 
