@@ -23,4 +23,5 @@ data2 = '''
 
 info = json.loads(data2)
 print("Name: ", info["name"][0])
-print("ID: ", info["ID"]["number"][0], info["ID"]["letter"][0])
+ID = info["ID"]["number"][0] + info["ID"]["letter"][0]
+print("ID: ", ID)
