@@ -21,6 +21,6 @@ data2 = '''
     }
 }'''
 
-info = json.loads(data)
-print("Name: ", info["name"])
-print("Hide: ", info["email"]["hide"])
+info = json.loads(data2)
+print("Name: ", info["name"][0])
+# print("Hide: ", info["ID"]["number"][0]["letter"][0])
