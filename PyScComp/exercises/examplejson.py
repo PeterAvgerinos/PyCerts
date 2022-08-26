@@ -1,14 +1,23 @@
 import json
 
-data = '''
+# data = '''
+# {
+#     "name" : "Chuck",
+#     "phone" : {
+#         "type" : "intl",
+#         "number" : "+1 734 303 4456"
+#     },
+#     "email" : {
+#         "hide" : "yes"
+#     }
+# }'''
+
+data2 = '''
 {
-    "name" : "Chuck",
-    "phone" : {
-        "type" : "intl",
-        "number" : "+1 734 303 4456"
-    },
-    "email" : {
-        "hide" : "yes"
+    "name" : ["Peter", "George", "Matt", "Gina", "Carlos"],
+    "ID" : {
+    "number" : ["1", "2", "3", "4", "5"],
+    "letter" : ["P", "G", "M", "G", "C"]
     }
 }'''
 
