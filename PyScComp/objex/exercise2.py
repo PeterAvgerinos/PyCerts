@@ -21,5 +21,4 @@ else:
     action = False
 
 poop = Poopster('Peter', action)
-print(poop)
 poop.poop()
