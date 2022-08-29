@@ -21,4 +21,5 @@ else:
     action = False
 
 poop = Poopster('Peter', action)
+print(poop.__str__())
 poop.poop()
