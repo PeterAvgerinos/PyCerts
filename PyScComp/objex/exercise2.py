@@ -1,4 +1,11 @@
-class Poopster:
+class Human:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        print(f'my man {self.name} is a Human')
+
+class Poopster(Human):
     def __init__(self, name, action):
         self.name = name
         self.action = action
