@@ -9,6 +9,11 @@ class Poopster:
         else:
             print('Mister', self.name, 'ain\'t no Poopster')
 
+    def poop(self):
+        print('pritz')
+        print('wowowoowoow')
+
+
 x = input('Did you poop today?')
 if x == 'yes':
     action = True
@@ -17,3 +22,4 @@ else:
 
 poop = Poopster('Peter', action)
 print(poop)
+poop.poop()
