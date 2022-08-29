@@ -23,3 +23,6 @@ else:
 poop = Poopster('Peter', action)
 poop.__str__()
 poop.poop()
+
+print(type(poop))
+print(dir(poop))
