@@ -4,6 +4,9 @@ Libraries:
     urllib Library (does socket work and makes web pages look like a file)
     Beautiful Soup
     json Library 
+    SQLite
+
+
 
 XML and JSON:
     XML: (document for structured information)
