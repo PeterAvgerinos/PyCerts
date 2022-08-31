@@ -4,10 +4,7 @@ Libraries:
     urllib Library (does socket work and makes web pages look like a file)
     Beautiful Soup
     json Library 
-    SQLite
-
-
-
+    SQLite (import sqlite3)
 
 XML and JSON:
     XML: (document for structured information)
@@ -25,3 +22,6 @@ XML and JSON:
 
     JSON: (document for structured information)  
         simpler and more common than XML
+
+SQL Desktop: 
+    User Interface for create and maintaining a database
