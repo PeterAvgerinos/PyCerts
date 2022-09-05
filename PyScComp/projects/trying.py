@@ -8,10 +8,13 @@ while True:
         number1, number2 = int(matches.group(1)), int(matches.group(3))
         operator = matches.group(2)
         if operator == "+":
-            print(number1 + number2)
+            result = number1 + number2
+            print((10-number1)*" ", number1)
+            print(operator + (9-number2)*" ", number2)
+            print(10*"-")
+            print((10-result)*" ", result)
             break
         elif operator == "-":
-            print(number1 - number2)
             break
         else:
             continue
