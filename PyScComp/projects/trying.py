@@ -2,27 +2,28 @@ import re
 list = ["3 - 5", "4 + 10", "25 - 2"]
 
 def arithmetic_arranger(problems):
-    try:
-        for item in problems:
-            problem = item.replace(" ", "")
-            matches = re.search(r"([0-9]+)([\+|\-])([0-9]+)", problem)
+    for item in problems:
+        problem = item.replace(" ", "")
+        matches = re.search(r"([0-9]+)([\+|\-])([0-9]+)", problem)
 
-            if matches:
-                number1, number2 = int(matches.group(1)), int(matches.group(3))
-                operator = matches.group(2)
-                if operator == "+":
-                    result = number1 + number2
-                elif operator == "-":
-                    result = number1 - number2
-                else:
-                    continue
-                print(number1)
-                print(operator, number2)
-                print(10*"-")
-                print(result)
-                print()
-    except:
-        raise(ValueError)
+        if matches:
+            number1, number2 = int(matches.group(1)), int(matches.group(3))
+            operator = matches.group(2)
+            spaces1 = len(str(number1))
+            spaces2 = len(str(number2))
+            if operator == "+":
+                result = number1 + number2
+                spacesr = len(str(result))
+            elif operator == "-":
+                result = number1 - number2
+                spacesr = len(str(result))
+            else:
+                continue
+            print((10 - spaces1)*" ",number1)
+            print(operator, (9 - spaces2)*" ", number2)
+            print(13*"-")
+            print((10-spacesr)*" ", result)
+            print()
 
 def main():
     return arithmetic_arranger(list)
