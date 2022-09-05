@@ -20,8 +20,8 @@ def arithmetic_arranger(problems):
             else:
                 continue
             print((10 - spaces1)*" ",number1)
-            print(operator, (9 - spaces2)*" ", number2)
-            print(13*"-")
+            print(operator, (8 - spaces2)*" ", number2)
+            print(10*"-")
             print((10-spacesr)*" ", result)
             print()
 
