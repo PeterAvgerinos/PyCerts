@@ -19,11 +19,11 @@ def arithmetic_arranger(problems, show_result = False):
                 spacesr = len(str(result))
             else:
                 continue
-            print((10 - spaces1)*" ",number1)
-            print(operator, (8 - spaces2)*" ", number2)
-            print(10*"-")
+            print((5 - spaces1)*" ",number1)
+            print(operator, (1 - spaces2)*" ", number2)
+            print(5*"-")
             if show_result == True:
-                print((10-spacesr)*" ", result)
+                print((5-spacesr)*" ", result)
             print()
 
 def main():
