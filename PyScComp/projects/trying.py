@@ -1,7 +1,8 @@
 import re
+list = ["3 + 5", "4 + 10", "25 - 2"]
 
-while True:
-    problem = input("What\'s your problem dude?").replace(" ", "")
+for item in list:
+    problem = item.replace(" ", "")
     matches = re.search(r"([0-9]+)([\+|\-])([0-9]+)", problem)
 
     if matches:
