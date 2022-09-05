@@ -1,7 +1,7 @@
 import re
 list = ["399 - 554", "43 + 102", "25 - 200"]
 
-def arithmetic_arranger(problems):
+def arithmetic_arranger(problems, show_result = False):
     for item in problems:
         problem = item.replace(" ", "")
         matches = re.search(r"([0-9]+)([\+|\-])([0-9]+)", problem)
@@ -22,7 +22,8 @@ def arithmetic_arranger(problems):
             print((10 - spaces1)*" ",number1)
             print(operator, (8 - spaces2)*" ", number2)
             print(10*"-")
-            print((10-spacesr)*" ", result)
+            if show_result == True:
+                print((10-spacesr)*" ", result)
             print()
 
 def main():
