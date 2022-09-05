@@ -9,10 +9,10 @@ while True:
         operator = matches.group(2)
         if operator == "+":
             result = number1 + number2
-            print((10-number1)*" ", number1)
-            print(operator + (9-number2)*" ", number2)
+            print(10*" ", number1)
+            print(operator + (10)*" ", number2)
             print(10*"-")
-            print((10-result)*" ", result)
+            print((10)*" ", result)
             break
         elif operator == "-":
             break
