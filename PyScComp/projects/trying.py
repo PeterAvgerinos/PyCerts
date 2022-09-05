@@ -10,17 +10,11 @@ for item in list:
         operator = matches.group(2)
         if operator == "+":
             result = number1 + number2
-            print(10*" ", number1)
-            print(operator + (10)*" ", number2)
-            print(10*"-")
-            print((10)*" ", result)
-            break
         elif operator == "-":
             result = number1 - number2
-            print(10*" ", number1)
-            print(operator + (10)*" ", number2)
-            print(10*"-")
-            print((10)*" ", result)
-            break
         else:
             continue
+        print(10*" ", number1)
+        print(operator + (10)*" ", number2)
+        print(10*"-")
+        print((10)*" ", result)
