@@ -1,5 +1,5 @@
 import re
-list = ["3 + 5", "4 + 10", "25 - 2"]
+list = ["3 - 5", "4 + 10", "25 - 2"]
 
 def arithmetic_arranger(problems):
     try:
