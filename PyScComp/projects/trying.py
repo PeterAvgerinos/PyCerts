@@ -15,7 +15,7 @@ while True:
         #     break
         # else:
         #     continue
-        print(matches[0], matches[1], matches[2])
+        print(number1, number2, operator)
         break
 
 
