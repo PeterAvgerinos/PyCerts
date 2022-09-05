@@ -2,7 +2,7 @@ import re
 
 while True:
     problem = input("What\'s your problem dude?").replace(" ", "")
-    matches = re.search(r"[0-9]+\+[0-9]+", problem)
+    matches = re.search(r"[0-9]+|\+|[0-9]+", problem)
 
     if matches:
         number1, number2 = int(matches[0]), int(matches[2])
