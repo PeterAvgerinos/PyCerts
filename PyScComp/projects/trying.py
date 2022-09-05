@@ -27,6 +27,6 @@ def arithmetic_arranger(problems, show_result = False):
             print()
 
 def main():
-    return arithmetic_arranger(list)
+    return arithmetic_arranger(list, True)
 
 main()
