@@ -15,6 +15,11 @@ while True:
             print((10)*" ", result)
             break
         elif operator == "-":
+            result = number1 - number2
+            print(10*" ", number1)
+            print(operator + (10)*" ", number2)
+            print(10*"-")
+            print((10)*" ", result)
             break
         else:
             continue
