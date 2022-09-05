@@ -18,3 +18,4 @@ for item in list:
         print(operator + (10)*" ", number2)
         print(10*"-")
         print((10)*" ", result)
+        print()
