@@ -1,5 +1,5 @@
 import re
-list = ["399  554", "43 + 102", "25 - 200"]
+list = ["39999 + 554", "43 + 102", "25 - 200"]
 
 def arithmetic_arranger(problems, show_result = False):
     a = {}
