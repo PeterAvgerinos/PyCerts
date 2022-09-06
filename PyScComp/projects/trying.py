@@ -37,7 +37,6 @@ def arithmetic_arranger(problems, show_result = False):
         print("Error: Operator must be + or -")
     except ValueError:
         print("Error: Numbers can not be more than four digits")
-    
 
     for i in a:
         print((5 - a[i][0])*" ", a[i][1], 5*" ", end="")
