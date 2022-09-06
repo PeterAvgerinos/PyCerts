@@ -43,4 +43,5 @@ def arithmetic_arranger(problems, show_result = False):
 def main():
     return arithmetic_arranger(list, True)
 
-main()
+if __name__ == "__main__":
+    main()
