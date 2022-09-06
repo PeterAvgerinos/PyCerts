@@ -35,12 +35,18 @@ def arithmetic_arranger(problems, show_result = False):
         i = i + 1
 
     for i in a:
-        print((5 - a[i][0])*" ", a[i][1])
-        print(a[i][2], (1 - a[i][3])*" ", a[i][4])
-        print(5*"-")
+        print((5 - a[i][0])*" ", a[i][1], end="")
+    print()
+    for i in a:
+        print(a[i][2], (1 - a[i][3])*" ", a[i][4], end="")
+    print()
+    for i in a:
+        print(5*"-", end="")
+    print()
+    for i in a:
         if show_result == True:
-            print((5 - a[i][5])*" ", a[i][6])
-        print()
+            print((5 - a[i][5])*" ", a[i][6], end="")
+    print()
 
 def main():
     return arithmetic_arranger(list, True)
