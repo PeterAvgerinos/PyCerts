@@ -14,8 +14,6 @@ def arithmetic_arranger(problems, show_result = False):
 
             if matches:
                 number1, number2 = int(matches.group(1)), int(matches.group(3))
-                if str(number1).isdigit() == False or str(number2).isdigit() == False:
-                    raise AttributeError
                 operator = matches.group(2)
                 if operator != "+" and operator != "-":
                     raise ArithmeticError()
