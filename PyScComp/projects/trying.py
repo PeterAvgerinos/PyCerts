@@ -1,5 +1,7 @@
 import re
 list = ["399 - 554", "43 + 102", "25 - 200"]
+liste = []
+
 
 def arithmetic_arranger(problems, show_result = False):
     for item in problems:
@@ -25,8 +27,10 @@ def arithmetic_arranger(problems, show_result = False):
             if show_result == True:
                 print((5-spacesr)*" ", result)
             print()
+        else:
+            ValueError("no problems found")
 
 def main():
-    return arithmetic_arranger(list, True)
+    return arithmetic_arranger(liste, True)
 
 main()
