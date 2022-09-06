@@ -41,7 +41,7 @@ def arithmetic_arranger(problems, show_result = False):
         print(a[i][2], (1 - a[i][3])*" ", a[i][4], end="")
     print()
     for i in a:
-        print(5*"-", end="")
+        print(5*"-", 5*" ", end="")
     print()
     for i in a:
         if show_result == True:
