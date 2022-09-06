@@ -4,36 +4,44 @@ liste = []
 
 
 def arithmetic_arranger(problems, show_result = False):
-    try:
-        for item in problems:
-            problem = item.replace(" ", "")
-            matches = re.search(r"([0-9]+)([\+|\-])([0-9]+)", problem)
+    a = {}
 
-            if matches:
-                number1, number2 = int(matches.group(1)), int(matches.group(3))
-                operator = matches.group(2)
-                spaces1 = len(str(number1))
-                spaces2 = len(str(number2))
-                if operator == "+":
-                    result = number1 + number2
-                    spacesr = len(str(result))
-                elif operator == "-":
-                    result = number1 - number2
-                    spacesr = len(str(result))
-                else:
-                    continue
-                print((5 - spaces1)*" ",number1)
-                print(operator, (1 - spaces2)*" ", number2)
-                print(5*"-")
-                if show_result == True:
-                    print((5-spacesr)*" ", result)
-                print()
+    for item in problems:
+        i = 1
+        problem = item.replace(" ", "")
+        matches = re.search(r"([0-9]+)([\+|\-])([0-9]+)", problem)
+
+        if matches:
+            number1, number2 = int(matches.group(1)), int(matches.group(3))
+            operator = matches.group(2)
+            spaces1 = len(str(number1))
+            spaces2 = len(str(number2))
+            if operator == "+":
+                result = number1 + number2
+                spacesr = len(str(result))
+            elif operator == "-":
+                result = number1 - number2
+                spacesr = len(str(result))
             else:
-                ValueError()
-    except ValueError:
-        print("no problems found")
+                continue
+            a.update({i: [spaces1, number1, operator, spaces2, number2, spacesr, result]})
+            # print((5 - spaces1)*" ",number1)
+            # print(operator, (1 - spaces2)*" ", number2)
+            # print(5*"-")
+            # if show_result == True:
+            #     print((5-spacesr)*" ", result)
+            # print()
+            i = i + 1
+
+    for i in a:
+        print((5 - a[i][0])*" ", a[i][1])
+        print(a[i][2], (1 - a[i][3])*" ", a[i][4])
+        print(5*"-")
+        if show_result == True:
+            print((5 - a[i][5])*" ", a[i][6])
+        print()
 
 def main():
-    return arithmetic_arranger(liste, True)
+    return arithmetic_arranger(list, True)
 
 main()
