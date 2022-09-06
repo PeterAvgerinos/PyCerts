@@ -1,11 +1,11 @@
 import re
-list = ["399 + 554", "43 + 102", "25 - 200"]
+problems = ["399 / 554", "43 + 102", "25 - 200"]
 
 def arithmetic_arranger(problems, show_result = False):
     a = {}
 
-    if len(list) > 5:
-        raise Exception("Error: Too many problems")
+    if len(problems) > 5:
+        raise Exception("Error: Too many problems.")
 
     for item in problems:
         problem = item.replace(" ", "")
@@ -48,7 +48,7 @@ def arithmetic_arranger(problems, show_result = False):
     print()
 
 def main():
-    return arithmetic_arranger(list, True)
+    return arithmetic_arranger(problems, True)
 
 if __name__ == "__main__":
     main()
