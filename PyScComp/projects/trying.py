@@ -1,13 +1,12 @@
 import re
-list = ["399  554", "43 + 102", "25 - 200"]
+list = ["399 + 554", "43 + 102", "25 - 200"]
 
 def arithmetic_arranger(problems, show_result = False):
     a = {}
-    flagoperator = []
 
     try:
         if len(list) > 5:
-            raise KeyError()
+            raise Exception("Error: Too many problems")
 
         for item in problems:
             problem = item.replace(" ", "")
@@ -17,13 +16,11 @@ def arithmetic_arranger(problems, show_result = False):
                 number1, number2 = int(matches.group(1)), int(matches.group(3))
                 operator = matches.group(2)
                 if operator != "+" and operator != "-":
-                    i = 0
-                    flagoperator[i] = True;
-                    i = i + 1
+                    raise Exception("Error: Operator must be + or -")
                 spaces1 = len(str(number1))
                 spaces2 = len(str(number2))
                 if spaces1 > 4 or spaces2 > 4:
-                    raise ValueError()
+                    raise Exception("Error: Numbers can not be more than four digits")
                 if operator == "+":
                     result = number1 + number2
                     spacesr = len(str(result))
@@ -38,11 +35,9 @@ def arithmetic_arranger(problems, show_result = False):
                 raise AttributeError()
     except KeyError:
         print("Error: Too many problems")
+    except ImportError:
+        print("Error: Operator must be + or -")
     except AttributeError:
-        for i in flagoperator:
-            if i:
-                print("Error: Operator must be + or -")
-                break
         print("Error: Only Numbers")
     except ValueError:
         print("Error: Numbers can not be more than four digits")
