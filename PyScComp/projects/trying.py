@@ -1,5 +1,5 @@
 import re
-list = ["39999 + 554", "43 + 102", "25 - 200"]
+list = ["399b + 554", "43 + 102", "25 - 200"]
 
 def arithmetic_arranger(problems, show_result = False):
     a = {}
@@ -31,6 +31,8 @@ def arithmetic_arranger(problems, show_result = False):
                     continue
                 new_value = {problem: [spaces1, number1, operator, spaces2, number2, spacesr, result]}
                 a.update(new_value)
+            else:
+                raise AttributeError()
     except KeyError:
         print("Error: Too many problems")
     except ArithmeticError:
