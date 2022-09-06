@@ -7,7 +7,6 @@ def arithmetic_arranger(problems, show_result = False):
     a = {}
 
     for item in problems:
-        i = 0
         problem = item.replace(" ", "")
         matches = re.search(r"([0-9]+)([\+|\-])([0-9]+)", problem)
 
@@ -32,7 +31,6 @@ def arithmetic_arranger(problems, show_result = False):
             # if show_result == True:
             #     print((5-spacesr)*" ", result)
             # print()
-        i = i + 1
 
     for i in a:
         print((5 - a[i][0])*" ", a[i][1], 5*" ", end="")
