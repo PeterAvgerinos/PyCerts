@@ -1,5 +1,5 @@
 import re
-list = ["399 - 554", "43 + 102", "25 - 200b"]
+list = ["399 - 554", "43 + 102", "25 - 200"]
 
 def arithmetic_arranger(problems, show_result = False):
     a = {}
@@ -14,6 +14,8 @@ def arithmetic_arranger(problems, show_result = False):
 
             if matches:
                 number1, number2 = int(matches.group(1)), int(matches.group(3))
+                if str(number1).isdigit() == False or str(number2).isdigit() == False:
+                    raise AttributeError
                 operator = matches.group(2)
                 if operator != "+" and operator != "-":
                     raise ArithmeticError()
@@ -35,6 +37,8 @@ def arithmetic_arranger(problems, show_result = False):
         print("Error: Too many problems")
     except ArithmeticError:
         print("Error: Operator must be + or -")
+    except AttributeError:
+        print("Error: Only Numbers")
     except ValueError:
         print("Error: Numbers can not be more than four digits")
 
