@@ -10,7 +10,7 @@ def arithmetic_arranger(problems, show_result = False):
     for problem in problems:
         problem = problem.replace(" ", "")
         matches = re.search(r"^([0-9]+)([\+|\-])([0-9]+)$", problem)
-        if "+" or "-" not in problem:
+        if not "+" and not "-" in problem:
             raise Exception("Error: Operator must be \'+\' or \'-\'.")
 
         if matches:
