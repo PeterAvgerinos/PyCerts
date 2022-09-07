@@ -1,5 +1,5 @@
 import re
-problems = ["399 / 554", "43 + 102", "25 - 200"]
+problems = ["399 + 554", "43 + 102", "25 - 200"]
 
 def arithmetic_arranger(problems, show_result = False):
     a = {}
@@ -9,11 +9,10 @@ def arithmetic_arranger(problems, show_result = False):
 
     for problem in problems:
         problem = problem.replace(" ", "")
+        if ("+" not in problem) and ("-" not in problem):
+                raise Exception("Error: Operator must be \'+\' or \'-\'.")
         matches = re.search(r"^([0-9]+)([\+|\-])([0-9]+)$", problem)
-        if not "+" and not "-" in problem:
-            raise Exception("Error: Operator must be \'+\' or \'-\'.")
-
-        if matches:
+        if bool(matches):
             number1, number2 = int(matches.group(1)), int(matches.group(3))
             operator = matches.group(2)
             if operator != "+" and operator != "-":
