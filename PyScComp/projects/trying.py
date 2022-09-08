@@ -34,19 +34,25 @@ def arithmetic_arranger(problems, show_result = False):
         else:
             raise Exception("Error: Only Numbers")
 
+    # for i in a:
+    #     print((5 - a[i][0])*" ", a[i][1], 5*" ", end="")
+    # print()
+    # for i in a:
+    #     print(a[i][2], (1 - a[i][3])*" ", a[i][4], 5*" ", end="")
+    # print()
+    # for i in a:
+    #     print(2*max(a[i][0], a[i][3])*"-", 5*" ", end="")
+    # print()
+    # for i in a:
+    #     if show_result == True:
+    #         print((5 - a[i][5])*" ", a[i][6], 5*" ",  end="")
+    # print()
+
     for i in a:
-        print((5 - a[i][0])*" ", a[i][1], 5*" ", end="")
+        print('{:>12}'.format(a[i][1]), end="")
     print()
     for i in a:
-        print(a[i][2], (1 - a[i][3])*" ", a[i][4], 5*" ", end="")
-    print()
-    for i in a:
-        print(2*max(a[i][0], a[i][3])*"-", 5*" ", end="")
-    print()
-    for i in a:
-        if show_result == True:
-            print((5 - a[i][5])*" ", a[i][6], 5*" ",  end="")
-    print()
+        print('{:>1} {:>10} {:>2}'.format(a[i][2], a[i][4], " "), end="")
 
 def main():
     return arithmetic_arranger(problems, True)
