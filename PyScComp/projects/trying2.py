@@ -1,5 +1,5 @@
 import re
-problem = ["344 + 2", "434 + 222", "22 + 8", "52 - 22"]
+problems = ["344 @  2", "434 + 222", "22 + 8", "52 - 22"]
 
 def arithmetic_arranger(problems, show_result = False):
   a = {}
@@ -61,7 +61,7 @@ def arithmetic_arranger(problems, show_result = False):
   return arithmetic_arranged
 
 def main():
-    arithmetic_arranger(problem, True)
+    print(arithmetic_arranger(problems, True))
 
 if __name__ == "__main__()":
     main()
