@@ -46,17 +46,17 @@ def arithmetic_arranger(problems, show_result = False):
         print(lenbar)
 
     for i in a:
-        print((lenbar[i] - a[i][0])*" ", a[i][1], 4*" ", end="")
+        print((lenbar[i] - a[i][0] - 1)*" ", a[i][1], 4*" ", end="")
     print()
     for i in a:
-        print(a[i][2], (lenbar[i] - 1 - a[i][3])*" ", a[i][4], 4*" ", end="")
+        print(a[i][2], (lenbar[i] - a[i][3])*" ", a[i][4], 4*" ", end="")
     print()
     for i in a:
         print(lenbar[i]*"-", 4*" ", end="")
     print()
     for i in a:
         if show_result == True:
-            print((lenbar[i] - a[i][5])*" ", a[i][6], 4*" ",  end="")
+            print((lenbar[i] - a[i][5] - 1)*" ", a[i][6], 4*" ",  end="")
     print()
 
     # for i in a:
