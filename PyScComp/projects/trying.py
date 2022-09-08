@@ -3,6 +3,7 @@ problems = ["399 + 554", "43 + 102", "25 - 200"]
 
 def arithmetic_arranger(problems, show_result = False):
     a = {}
+    lenbar = []
 
     if len(problems) > 5:
         raise Exception("Error: Too many problems.")
@@ -33,26 +34,36 @@ def arithmetic_arranger(problems, show_result = False):
             a.update(new_value)
         else:
             raise Exception("Error: Only Numbers")
-
-    # for i in a:
-    #     print((5 - a[i][0])*" ", a[i][1], 5*" ", end="")
-    # print()
-    # for i in a:
-    #     print(a[i][2], (1 - a[i][3])*" ", a[i][4], 5*" ", end="")
-    # print()
-    # for i in a:
-    #     print(2*max(a[i][0], a[i][3])*"-", 5*" ", end="")
-    # print()
-    # for i in a:
-    #     if show_result == True:
-    #         print((5 - a[i][5])*" ", a[i][6], 5*" ",  end="")
-    # print()
+    for i in a:
+        if max(a[i][5], a[i][0], a[i][3]) <= 2:
+            lenbar[i] = 4
+        elif max(a[i][5], a[i][0], a[i][3]) <= 3:
+            lenbar[i] = 5
+        else:
+            lenbar[i] = 6
 
     for i in a:
-        print('{:>12}'.format(a[i][1]), end="")
+        print((5 - a[i][0])*" ", a[i][1], 5*" ", end="")
     print()
     for i in a:
-        print('{:>12}'.format(a[i][4]), end="")
+        print(a[i][2], (1 - a[i][3])*" ", a[i][4], 5*" ", end="")
+    print()
+    for i in a:
+        print(2*max(a[i][0], a[i][3])*"-", 5*" ", end="")
+    print()
+    for i in a:
+        if show_result == True:
+            print((5 - a[i][5])*" ", a[i][6], 5*" ",  end="")
+    print()
+
+    # for i in a:
+    #     print('{:>12}'.format(a[i][1]), end="")
+    # print()
+    # for i in a:
+    #     print('{:>12}'.format(a[i][4]), end="")
+    # print()
+    # for i in a:
+    #     print('{:>12}'.format())
 
 def main():
     return arithmetic_arranger(problems, True)
