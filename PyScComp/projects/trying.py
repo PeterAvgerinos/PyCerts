@@ -35,15 +35,13 @@ def arithmetic_arranger(problems, show_result = False):
         else:
             raise Exception("Error: Only Numbers")
     for i in a:
-        j = 0
-        if max(a[i][5], a[i][0], a[i][3]) <= 2:
-            lenbar[j] = 4
-        elif max(a[i][5], a[i][0], a[i][3]) <= 3:
-            lenbar[j] = 5
-        else:
-            lenbar[j] = 6
-        print(lenbar[j])
-        j = j + 1
+        # if max(a[i][5], a[i][0], a[i][3]) <= 2:
+        #     lenbar[i] = 4
+        # elif max(a[i][5], a[i][0], a[i][3]) <= 3:
+        #     lenbar[i] = 5
+        # else:
+        #     lenbar[i] = 6
+        print(int(i))
 
     # for i in a:
     #     print((lenbar[i] - a[i][0])*" ", a[i][1], 4*" ", end="")
