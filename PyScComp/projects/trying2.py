@@ -1,5 +1,5 @@
 import re
-problems = ["344 @  2", "434 + 222", "22 + 8", "52 - 22"]
+problems = ["344 + 2", "434 + 222", "22 + 8", "52 - 22"]
 
 def arithmetic_arranger(problems, show_result = False):
     a = {}
@@ -37,6 +37,7 @@ def arithmetic_arranger(problems, show_result = False):
         else:
             arithmetic_arranged = "Error: Only Numbers"
             return arithmetic_arranged
+
     for i in a:
         if max(a[i][5], a[i][0], a[i][3]) <= 2:
             lenbar[i] = 4
