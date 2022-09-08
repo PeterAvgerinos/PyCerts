@@ -52,7 +52,7 @@ def arithmetic_arranger(problems, show_result = False):
         print('{:>12}'.format(a[i][1]), end="")
     print()
     for i in a:
-        print('{:>1} {:>10} {:>2}'.format(a[i][2], a[i][4], " "), end="")
+        print('{:>12}'.format(a[i][4]), end="")
 
 def main():
     return arithmetic_arranger(problems, True)
