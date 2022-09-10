@@ -8,7 +8,7 @@ def add_time(start_time, duration):
     duration_hour = int(duration.split(":")[0])
     duration_minutes = int(duration.split(":")[1])
     if flag in start_time:
-        start_hour = start_hour*2
+        start_hour = start_hour + 12
     new_hour = start_hour + duration_hour
     new_minutes = start_minutes + duration_minutes
     new_hour = new_hour + new_minutes//60
@@ -17,7 +17,7 @@ def add_time(start_time, duration):
     new_hour = new_hour%24
 
     if flag in start_time:
-        new_hour = new_hour/2
+        new_hour = new_hour - 12
     print(f"{new_hour}:{new_minutes} {days}")
 
 
