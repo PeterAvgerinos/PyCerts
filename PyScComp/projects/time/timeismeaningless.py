@@ -2,17 +2,17 @@
 #PM after midday 12 - 24
 def add_time(start_time, duration):
     start_time = start_time.replace(" ", "").capitalize()
-    start_hour = start_time.split(":")[0]
-    start_minutes = start_time.split(":")[1][:2]
-    duration_hour = duration.split(":")[0]
-    duration_minutes = duration.split(":")[1]
+    start_hour = int(start_time.split(":")[0])
+    start_minutes = int(start_time.split(":")[1][:2])
+    duration_hour = int(duration.split(":")[0])
+    duration_minutes = int(duration.split(":")[1])
     if "PM" in start_time:
         start_hour = start_hour*2
     new_hour = start_hour + duration_hour
     new_minutes = start_minutes + duration_minutes
     if "PM" in start_time:
         new_hour = new_hour/2
-    print(new_hour, new_minutes)
+    print(f"{new_hour}:{new_minutes}")
 
 
 
