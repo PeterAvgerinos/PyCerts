@@ -1,18 +1,22 @@
 #AM before midday 1 - 12
 #PM after midday 12 - 24
 def add_time(start_time, duration):
+    flag = "PM"
     start_time = start_time.replace(" ", "").capitalize()
     start_hour = int(start_time.split(":")[0])
     start_minutes = int(start_time.split(":")[1][:2])
     duration_hour = int(duration.split(":")[0])
     duration_minutes = int(duration.split(":")[1])
-    if "PM" in start_time:
+    if flag in start_time:
         start_hour = start_hour*2
     new_hour = start_hour + duration_hour
     new_minutes = start_minutes + duration_minutes
-    if "PM" in start_time:
+    days = new_hour//24
+    new_hour = new_hour%24
+
+    if flag in start_time:
         new_hour = new_hour/2
-    print(f"{new_hour}:{new_minutes}")
+    print(f"{new_hour}:{new_minutes} {days}")
 
 
 
@@ -34,7 +38,7 @@ def main():
     # print(add_time("11:43 PM", "24:20", "tueSday"))
     # print("Should output 12:03 AM, Thursday (2 days later)")
     #
-    # print(add_time("6:30 PM", "205:12"))
+    add_time("6:30 PM", "205:12")
     # print("Should output 7:42 AM (9 days later)")
 
 if __name__ == "__main__":
