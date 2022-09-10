@@ -1,11 +1,10 @@
-def add_time(start_time, duration, starting_day = None):
-    start_time = start_time.replace(" ", "")
-    start_size = len(start_time)
+def add_time(start_time, duration):
+    start_time = start_time.replace(" ", "").capitalize()
     start_hour = start_time.split(":")[0]
-    start_minute = start_time.split(":")[1][:start_size - 2]
-    print(start_time, start_size, start_hour, start_minute)
-    print(duration)
-    print(starting_day)
+    start_minute = start_time.split(":")[1][:2]
+    # if "AM" in start_time:
+
+    # print(start_time, start_hour, start_minute)
 
 def main():
     add_time("3:00 PM", "3:10")
@@ -26,5 +25,5 @@ def main():
     # print(add_time("6:30 PM", "205:12"))
     # print("Should output 7:42 AM (9 days later)")
 
-if __name__ == "__main__()":
+if __name__ == "__main__":
     main()
