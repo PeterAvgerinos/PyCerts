@@ -1,7 +1,7 @@
 #AM before midday 1 - 12
 #PM after midday 12 - 24
 def add_time(start_time, duration):
-    start_time = start_time.strip(" ").capitalize()
+    start_time = start_time.strip(" ")
     start_hour = int(start_time.split(":")[0])
     start_minutes = int(start_time.split(":")[1][:2])
     duration_hour = int(duration.split(":")[0])
@@ -22,8 +22,6 @@ def add_time(start_time, duration):
     print(days)
     new_hour = new_hour%24
 
-    if "PM" in start_time:
-        new_hour = new_hour - 12
     days = new_hour//24
     print(new_hour)
     print(new_minutes)
