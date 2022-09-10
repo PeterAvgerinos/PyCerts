@@ -11,8 +11,11 @@ def add_time(start_time, duration):
         start_hour = start_hour*2
     new_hour = start_hour + duration_hour
     new_minutes = start_minutes + duration_minutes
+    new_hour = new_hour + new_minutes//60
+    new_minutes = new_minutes%60
     days = new_hour//24
     new_hour = new_hour%24
+    
 
     if flag in start_time:
         new_hour = new_hour/2
