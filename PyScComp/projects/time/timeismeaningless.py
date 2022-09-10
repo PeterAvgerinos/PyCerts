@@ -22,8 +22,8 @@ def add_time(start_time, duration):
     print(days)
     new_hour = new_hour%24
 
-    # if "PM" in start_time:
-    #     new_hour = new_hour - 12
+    if "PM" in start_time:
+        new_hour = new_hour - 12
     days = new_hour//24
     print(new_hour)
     print(new_minutes)
