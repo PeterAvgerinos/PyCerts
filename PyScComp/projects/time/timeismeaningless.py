@@ -24,6 +24,11 @@ def add_time(start_time, duration, starting_day = None):
     days = new_hour//24
     new_hour = new_hour%24
 
+    if new_hour > 12:
+        new_hour = new_hour -12
+    else:
+        flag = "AM"
+
     ending_day_value = 0
     if starting_day:
         starting_day = starting_day.upper().title()
