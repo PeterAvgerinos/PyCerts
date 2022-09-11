@@ -3,6 +3,7 @@
 def add_time(start_time, duration, starting_day = None):
     weekdays = {"Sunday" : 0, "Monday" : 1, "Tuesday" : 2, "Wednesday" : 3, "Thursday": 4, "Friday" : 5, "Saturday" : 6}
     flag = "PM"
+    lw = list(weekdays.keys())
 
     start_time = start_time.strip(" ").upper()
 
@@ -28,14 +29,15 @@ def add_time(start_time, duration, starting_day = None):
         starting_day = starting_day.upper().title()
         ending_day_value = weekdays[starting_day] + days%6
 
-    print(weekdays.keys())
-
-    # if days == 0 :
-    #     print(f"{new_hour}:{new_minutes}")
-    # elif days == 1:
-    #     print(f"{new_hour}:{new_minutes} (next day)")
-    # else:
-    #     print(f"{new_hour}:{new_minutes} ({days} days later)")
+    if days == 0 :
+        if starting_day:
+            print(f"{new_hour:2}:{new_minutes:2}{flag}, {lw[ending_day_value]}")
+    elif days == 1:
+        if starting_day:
+            print(f"{new_hour:2}:{new_minutes:2}{flag} (next day)")
+    else:
+        if starting_day:
+            print(f"{new_hour:2}:{new_minutes:2}{flag} {lw[ending_day_value]} ({days} days later)")
 
 def main():
     # add_time("3:00 PM", "3:10")
