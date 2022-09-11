@@ -25,7 +25,7 @@ def add_time(start_time, duration, starting_day = None):
     new_hour = new_hour%24
 
     if new_hour > 12:
-        new_hour = new_hour -12
+        new_hour = new_hour - 12
     else:
         flag = "AM"
 
