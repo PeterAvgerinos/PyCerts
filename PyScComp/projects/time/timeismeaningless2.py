@@ -61,7 +61,7 @@ def main():
     # print(add_time("11:30 AM", "2:32", "Monday"))
     # print("Should output 2:02 PM, Monday")
 
-    print(add_time("11:43 AM", "00:20"))
+    print(add_time("2:59 AM", "24:00", "saturDay"))
     print("Should output 12:03 PM")
 
     # print(add_time("10:10 PM", "3:30"))
