@@ -31,11 +31,10 @@ def add_time(start_time, duration, starting_day = None):
         if new_hour == 0:
             new_hour = 12
 
-    ending_day_value = 0
     if starting_day:
         starting_day = starting_day.lower().title()
-        ending_day_value = weekdays[starting_day] + days%6
-        ending_day_value = ending_day_value%6
+        ending_day_value = weekdays[starting_day] + days%7
+        ending_day_value = ending_day_value%7
 
     if days == 0 :
         if starting_day:
