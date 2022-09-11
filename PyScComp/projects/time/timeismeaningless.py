@@ -23,17 +23,19 @@ def add_time(start_time, duration, starting_day = None):
     days = new_hour//24
     new_hour = new_hour%24
 
+    ending_day_value = 0
     if starting_day:
         starting_day = starting_day.upper().title()
         ending_day_value = weekdays[starting_day] + days%6
-        print(weekdays[f'{ending_day_value}'])
 
-    if days == 0 :
-        print(f"{new_hour}:{new_minutes}")
-    elif days == 1:
-        print(f"{new_hour}:{new_minutes} (next day)")
-    else:
-        print(f"{new_hour}:{new_minutes} ({days} days later)")
+    print(weekdays.keys())
+
+    # if days == 0 :
+    #     print(f"{new_hour}:{new_minutes}")
+    # elif days == 1:
+    #     print(f"{new_hour}:{new_minutes} (next day)")
+    # else:
+    #     print(f"{new_hour}:{new_minutes} ({days} days later)")
 
 def main():
     # add_time("3:00 PM", "3:10")
