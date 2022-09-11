@@ -31,13 +31,13 @@ def add_time(start_time, duration, starting_day = None):
 
     if days == 0 :
         if starting_day:
-            print(f"{new_hour:2}:{new_minutes:2}{flag}, {lw[ending_day_value]}")
+            print(f"{new_hour:02}:{new_minutes:02}{flag}, {lw[ending_day_value]}")
     elif days == 1:
         if starting_day:
-            print(f"{new_hour:2}:{new_minutes:2}{flag} (next day)")
+            print(f"{new_hour:02}:{new_minutes:02}{flag} (next day)")
     else:
         if starting_day:
-            print(f"{new_hour:2}:{new_minutes:2}{flag} {lw[ending_day_value]} ({days} days later)")
+            print(f"{new_hour:02}:{new_minutes:02}{flag} {lw[ending_day_value]} ({days} days later)")
 
 def main():
     # add_time("3:00 PM", "3:10")
