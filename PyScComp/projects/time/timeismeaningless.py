@@ -2,17 +2,16 @@
 #PM after midday 12 - 24
 def add_time(start_time, duration, starting_day = None):
     weekdays = {"Sunday" : 0, "Monday" : 1, "Tuesday" : 2, "Wednesday" : 3, "Thursday": 4, "Friday" : 5, "Saturday" : 6}
-    flag = "PM"
     lw = list(weekdays.keys())
 
     start_time = start_time.strip(" ").upper()
-
+    flag = start_time.split(":")[1][-2:]
     start_hour = int(start_time.split(":")[0])
     start_minutes = int(start_time.split(":")[1][:2])
     duration_hour = int(duration.split(":")[0])
     duration_minutes = int(duration.split(":")[1])
 
-    if flag in start_time:
+    if flag == "PM":
         start_hour = start_hour + 12
 
     new_hour = start_hour + duration_hour
@@ -26,6 +25,7 @@ def add_time(start_time, duration, starting_day = None):
 
     if new_hour > 12:
         new_hour = new_hour - 12
+        flag = "PM"
     else:
         flag = "AM"
 
