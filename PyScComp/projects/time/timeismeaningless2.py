@@ -54,23 +54,23 @@ def add_time(start_time, duration, starting_day = None):
     return new_time
 
 def main():
-    # print(add_time("3:00 PM", "3:10"))
-    # print("Should output 6:10 PM")
-    #
-    # print(add_time("11:30 AM", "2:32", "Monday"))
-    # print("Should output 2:02 PM, Monday")
+    print(add_time("3:00 PM", "3:10"))
+    print("Should output 6:10 PM")
+
+    print(add_time("11:30 AM", "2:32", "Monday"))
+    print("Should output 2:02 PM, Monday")
 
     print(add_time("2:59 AM", "24:00", "saturDay"))
     print("Should output 12:03 PM")
 
-    # print(add_time("10:10 PM", "3:30"))
-    # print("Should output 1:40 AM (next day)")
-    #
-    # print(add_time("11:43 PM", "24:20", "tueSday"))
-    # print("Should output 12:03 AM, Thursday (2 days later)")
-    #
-    # print(add_time("6:30 PM", "205:12"))
-    # print("Should output 7:42 AM (9 days later)")
-    #
+    print(add_time("10:10 PM", "3:30"))
+    print("Should output 1:40 AM (next day)")
+
+    print(add_time("11:43 PM", "24:20", "tueSday"))
+    print("Should output 12:03 AM, Thursday (2 days later)")
+
+    print(add_time("6:30 PM", "205:12"))
+    print("Should output 7:42 AM (9 days later)")
+
 if __name__ == "__main__":
     main()
