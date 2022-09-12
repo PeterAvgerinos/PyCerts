@@ -4,6 +4,10 @@ class Category:
         self.ledger = ledger
         self.total = 0
 
+    def __str__(self):
+        spacesn = len(self.name)
+        print("*"*((30-spacesn)//2), self.name,((30-spacesn)//2)*"*")
+
     def deposit(self, amount, description):
         self.ledger.append({"amount" : amount, "description" : description})
         self.total = self.total + amount
@@ -28,12 +32,12 @@ class Category:
             return False
 
     def check_funds(self, amount):
-        self.total < amount:
+        if self.total < amount:
+            return False
+        else:
+            return True
 
-
-
-
-
+print("*"*((26)//2), "poop",((26)//2)*"*")
 
 def create_spend_chart(categories):
     pass
