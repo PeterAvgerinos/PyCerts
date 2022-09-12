@@ -1,12 +1,15 @@
 class Category:
-    def __init__(self, name, ledger ):
+    def __init__(self, name):
         self.name = name
-        self.ledger = ledger
+        self.ledger = []
         self.total = 0
 
     def __str__(self):
         spacesn = len(self.name)
-        print("*"*((30-spacesn)//2), self.name,((30-spacesn)//2)*"*")
+        print("*"*((30-spacesn)//2) + self.name + ((30-spacesn)//2)*"*")
+        for item in self.ledger:
+            print(self.ledger[item]["description"][0 : 23] + " "*(7 - len(self.ledger[item]["amount"])) + (self.ledger[item]["amount"]))
+        print("Total: " + str(self.total))
 
     def deposit(self, amount, description):
         self.ledger.append({"amount" : amount, "description" : description})
@@ -37,7 +40,14 @@ class Category:
         else:
             return True
 
-print("*"*((26)//2), "poop",((26)//2)*"*")
+food = Category("Food")
+food.deposit(25, "poop")
+food.deposit(30, "piss")
+food.deposit(45, "ass")
+food.deposit(73, "dicks")
+food.withdraw(43, "pouch")
+print(food)
+
 
 def create_spend_chart(categories):
     pass
