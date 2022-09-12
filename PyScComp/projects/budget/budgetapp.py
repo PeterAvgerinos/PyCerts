@@ -12,13 +12,13 @@ class Category:
         print("Total: " + str(self.total))
 
     def deposit(self, amount, description):
-        self.ledger.update({"amount" : amount, "description" : description})
+        self.ledger.update({"amount" : str(amount), "description" : description})
         self.total = self.total + amount
 
     def withdraw(self, amount, description):
         if self.total > amount:
             self.total = self.total - amount
-            self.ledger.update({"amount" : "-" + amount, "description" : description})
+            self.ledger.update({"amount" : "-" + str(amount), "description" : description})
             return True
         else:
             return False
