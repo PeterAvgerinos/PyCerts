@@ -27,6 +27,9 @@ class Category:
         else:
             return False
 
+    def check_funds(self, amount):
+        self.total < amount:
+
 
 
 
