@@ -59,6 +59,8 @@ def create_spend_chart(categories):
         total = total + item.total
     for item in categories:
         percentages.append({"name" : item.name, "percentage" : (item.total/total)*100})
+    string = "Percentage spent by category \n"
+    return string
 
 
 categories = []
