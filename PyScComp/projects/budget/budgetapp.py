@@ -59,6 +59,9 @@ food.get_amount(1)
 food.get_description(1)
 print(food)
 
+clothing = Category("clothing")
+food.transfer(100, clothing)
+print(clothing)
 
 def create_spend_chart(categories):
     pass
