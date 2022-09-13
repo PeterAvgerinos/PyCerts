@@ -23,6 +23,11 @@ for k in range(0, len(catperc)):
 
 print(maximum)
 
+
+for i in ["string", "booldozer"]:
+    for k in range(max(len("string"), len("booldozer"))):
+        string = string + i[k]
+
 # for i in catperc:
 #     for k in i["name"]:
 #         print(catperc[i]["name"][k])
