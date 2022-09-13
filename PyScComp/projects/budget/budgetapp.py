@@ -66,8 +66,6 @@ def create_spend_chart(categories):
         if len(catperc[k]["name"]) > len(maximum):
             maximum = catperc[k]["name"]
 
-    print(maximum)
-
     for i in range(0, len(catperc)):
         for j in range(0, len(percentages)):
             if catperc[i]["Percentage"] > percentages[j]:
@@ -93,14 +91,11 @@ def create_spend_chart(categories):
         for jitem in range(0, len(catperc)):
             string = string + " " + catperc[jitem]["listofls"][item]
         string = string + "\n"
-
-
-    print(string)
-
+    return string
 
 
 categories = []
-food = Category("food")
+food = Category("Food")
 categories.append(food)
 food.deposit(25, "poop")
 food.deposit(30.5, "piss")
@@ -109,8 +104,9 @@ food.deposit(73, "dicks")
 food.withdraw(43, "pouch")
 print(food)
 
-clothing = Category("clothing")
+clothing = Category("Clothing")
 categories.append(clothing)
 food.transfer(100, clothing)
 print(clothing)
+print(create_spend_chart(categories))
 
