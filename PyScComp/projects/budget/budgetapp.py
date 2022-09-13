@@ -52,6 +52,9 @@ class Category:
         else:
             return True
 
+def create_spend_chart(categories):
+    pass
+
 food = Category("food")
 food.deposit(25, "poop")
 food.deposit(30.5, "piss")
@@ -66,5 +69,4 @@ clothing = Category("clothing")
 food.transfer(100, clothing)
 print(clothing)
 
-def create_spend_chart(categories):
-    pass
+
