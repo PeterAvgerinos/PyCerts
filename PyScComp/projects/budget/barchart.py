@@ -26,7 +26,10 @@ print(maximum)
 
 for i in ["string", "booldozer"]:
     for k in range(max(len("string"), len("booldozer"))):
-        string = string + i[k]
+        if bool(i[k]):
+            string = string + i[k]
+        else:
+            string = string + " "
 
 # for i in catperc:
 #     for k in i["name"]:
