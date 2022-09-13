@@ -6,10 +6,11 @@ class Category:
 
     def __str__(self):
         spacesn = len(self.name)
-        print("*"*((30-spacesn)//2) + self.name.title() + ((30-spacesn)//2)*"*")
+        string = ("*"*((30-spacesn)//2) + self.name.title() + ((30-spacesn)//2)*"*") + "\n"
         for item in range(0, len(self.ledger)):
-            print(self.ledger[item]["description"][0 : 23] + " "*(30 -len(self.ledger[item]["description"]) - len(self.ledger[item]["amount"])) + (self.ledger[item]["amount"]))
-        print("Total: " + str(self.total))
+            string = string + (self.ledger[item]["description"][0 : 23] + " "*(30 -len(self.ledger[item]["description"]) - len(self.ledger[item]["amount"])) + (self.ledger[item]["amount"])) + "\n"
+        string = string + ("Total: " + str(self.total))
+        return string
 
     def deposit(self, amount, description):
         self.ledger.append({"amount" : str(amount), "description" : description})
