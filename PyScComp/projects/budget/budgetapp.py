@@ -51,7 +51,7 @@ class Category:
 
 food = Category("food")
 food.deposit(25, "poop")
-food.deposit(30, "piss")
+food.deposit(30.5, "piss")
 food.deposit(45, "ass")
 food.deposit(73, "dicks")
 food.withdraw(43, "pouch")
