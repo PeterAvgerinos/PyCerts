@@ -5,11 +5,12 @@ class Category:
         self.total = 0
 
     def __str__(self):
-        spacesn = len(self.name)
-        print("*"*((30-spacesn)//2) + self.name + ((30-spacesn)//2)*"*")
-        for item in self.ledger:
-            print(self.ledger[item]["description"][0 : 23] + " "*(7 - len(self.ledger[item]["amount"])) + (self.ledger[item]["amount"]))
-        print("Total: " + str(self.total))
+        # spacesn = len(self.name)
+        # print("*"*((30-spacesn)//2) + self.name + ((30-spacesn)//2)*"*")
+        # for item in self.ledger:
+        #     print(self.ledger[item]["description"][0 : 23] + " "*(7 - len(self.ledger[item]["amount"])) + (self.ledger[item]["amount"]))
+        # print("Total: " + str(self.total))
+        type(self.ledger[1]["amount"])
 
     def deposit(self, amount, description):
         self.ledger.update({"amount" : str(amount), "description" : description})
