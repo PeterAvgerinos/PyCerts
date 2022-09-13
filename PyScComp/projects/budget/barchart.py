@@ -15,6 +15,12 @@ for i in range(0, len(catperc)):
             catperc[i]["listofos"].append("0")
         else:
             catperc[i]["listofos"].append(" ")
+        for k in range(0, len(maximum)):
+            try:
+                catperc[i]["listofls"].append(catperc[i]["name"][k])
+            except IndexError:
+                catperc[i]["listofls"].append(" ")
+
 
 for item in range(0, len(percentages)):
     string = string + f"{percentages[item]:>3}|"
@@ -22,6 +28,13 @@ for item in range(0, len(percentages)):
         string = string + " " + catperc[jitem]["listofos"][item]
     string = string + "\n"
 string = string + "    ----------"
+
+for item in range(0, len(percentages)):
+    string = string + "    "
+    for jitem in range(0, len(catperc)):
+        string = string + " " + catperc[jitem]["listofls"][item]
+    string = string + "\n"
+
 
 print(string)
 
