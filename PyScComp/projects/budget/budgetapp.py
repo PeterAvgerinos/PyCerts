@@ -61,12 +61,14 @@ food.deposit(30.5, "piss")
 food.deposit(45, "ass")
 food.deposit(73, "dicks")
 food.withdraw(43, "pouch")
-food.get_amount(1)
-food.get_description(1)
+if food.check_funds(100):
+    print("yeah")
 print(food)
 
 clothing = Category("clothing")
 food.transfer(100, clothing)
 print(clothing)
+if not food.check_funds(100):
+    print("nope")
 
 
