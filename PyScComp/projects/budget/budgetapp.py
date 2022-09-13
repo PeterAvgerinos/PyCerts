@@ -53,22 +53,26 @@ class Category:
             return True
 
 def create_spend_chart(categories):
-    pass
+    total = 0
+    percentages = []
+    for item in categories:
+        total = total + item.total
+    for item in categories:
+        percentages.append({"name" : item.name, "percentage" : (item.total/total)*100})
 
+
+categories = []
 food = Category("food")
+categories.append(food)
 food.deposit(25, "poop")
 food.deposit(30.5, "piss")
 food.deposit(45, "ass")
 food.deposit(73, "dicks")
 food.withdraw(43, "pouch")
-if food.check_funds(100):
-    print("yeah")
 print(food)
 
 clothing = Category("clothing")
+categories.append(clothing)
 food.transfer(100, clothing)
 print(clothing)
-if not food.check_funds(100):
-    print("nope")
-
 
