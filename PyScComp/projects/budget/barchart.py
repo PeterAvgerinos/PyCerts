@@ -16,24 +16,16 @@ for item in range(0, len(percentages)):
     string = string + "\n"
 string = string + "    ----------"
 
-letters = []
-
-for k in range(0, len(catperc)):
-    letters.append(catperc[k]["name"])
-
 maximum = catperc[0]["name"]
 for k in range(0, len(catperc)):
     if len(catperc[k]["name"]) > len(maximum):
         maximum = catperc[k]["name"]
 
-for k in range(0, len(maximum)):
-    for j in range(0, len(catperc)):
-        if catperc[j]["name"][k]:
-            
-            letters[j] = letters[j] + (catperc[j]["name"][k])
-        else:
-            letters[j] = letters[j] + (catperc[j]["name"][k])
-print(letters)
+print(maximum)
+
+# for i in catperc:
+#     for k in i["name"]:
+#         print(catperc[i]["name"][k])
 
 print(string)
 
