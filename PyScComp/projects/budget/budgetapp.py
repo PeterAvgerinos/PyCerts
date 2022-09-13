@@ -1,25 +1,24 @@
 class Category:
     def __init__(self, name):
         self.name = name
-        self.ledger = {}
+        self.ledger = []
         self.total = 0
 
     def __str__(self):
         spacesn = len(self.name)
-        string = ("*"*((30-spacesn)//2) + self.name + ((30-spacesn)//2)*"*")
+        print("*"*((30-spacesn)//2) + self.name.title() + ((30-spacesn)//2)*"*")
         for item in range(0, len(self.ledger)):
-            string = string + (self.ledger[item]["description"][0 : 23] + " "*(7 - len(self.ledger[item]["amount"])) + (self.ledger[item]["amount"]))
-        string = string + ("total: " + str(self.total))
-        return string
+            print(self.ledger[item]["description"][0 : 23] + " "*(30 -len(self.ledger[item]["description"]) - len(self.ledger[item]["amount"])) + (self.ledger[item]["amount"]))
+        print("Total: " + str(self.total))
 
     def deposit(self, amount, description):
-        self.ledger.update({"amount" : str(amount), "description" : description})
+        self.ledger.append({"amount" : str(amount), "description" : description})
         self.total = self.total + amount
 
     def withdraw(self, amount, description):
         if self.total > amount:
             self.total = self.total - amount
-            self.ledger.update({"amount" : "-" + str(amount), "description" : description})
+            self.ledger.append({"amount" : "-" + str(amount), "description" : description})
             return True
         else:
             return False
@@ -57,7 +56,7 @@ food.deposit(73, "dicks")
 food.withdraw(43, "pouch")
 food.get_amount(1)
 food.get_description(1)
-# print(food)
+print(food)
 
 
 def create_spend_chart(categories):
