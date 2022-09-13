@@ -10,7 +10,7 @@ class Category:
         # for item in self.ledger:
         #     print(self.ledger[item]["description"][0 : 23] + " "*(7 - len(self.ledger[item]["amount"])) + (self.ledger[item]["amount"]))
         # print("Total: " + str(self.total))
-        type(self.ledger[1]["amount"])
+        type(str(self.ledger[1]["amount"]))
 
     def deposit(self, amount, description):
         self.ledger.update({"amount" : str(amount), "description" : description})
