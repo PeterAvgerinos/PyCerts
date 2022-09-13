@@ -16,4 +16,6 @@ for item in range(0, len(percentages)):
         string = string + " " + catperc[jitem]["listofos"][item]
     string = string + "\n"
 string = string + "    ----------"
+
 print(string)
+
