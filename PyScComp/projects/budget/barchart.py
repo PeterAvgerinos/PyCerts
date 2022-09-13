@@ -27,9 +27,9 @@ for item in range(0, len(percentages)):
     for jitem in range(0, len(catperc)):
         string = string + " " + catperc[jitem]["listofos"][item]
     string = string + "\n"
-string = string + "    ----------"
+string = string + "    ---------- \n"
 
-for item in range(0, len(percentages)):
+for item in range(0, len(maximum)):
     string = string + "    "
     for jitem in range(0, len(catperc)):
         string = string + " " + catperc[jitem]["listofls"][item]
