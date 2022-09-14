@@ -1,5 +1,3 @@
-#AM before midday 1 - 12
-#PM after midday 12 - 24
 def add_time(start_time, duration, starting_day = None):
     weekdays = {"Sunday" : 0, "Monday" : 1, "Tuesday" : 2, "Wednesday" : 3, "Thursday": 4, "Friday" : 5, "Saturday" : 6}
     lw = list(weekdays.keys())
