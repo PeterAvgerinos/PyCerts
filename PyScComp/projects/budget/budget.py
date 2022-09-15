@@ -15,11 +15,11 @@ class Category:
         string = string + ("Total: " + str(self.total)) + "\n"
         return string
 
-    def deposit(self, amount, description):
+    def deposit(self, amount, description = ""):
         self.ledger.append({"amount" : str(amount), "description" : description})
         self.total = self.total + amount
 
-    def withdraw(self, amount, description):
+    def withdraw(self, amount, description = ""):
         if self.total > amount:
             self.total = self.total - amount
             self.ledger.append({"amount" : "-" + str(amount), "description" : description})
@@ -92,21 +92,4 @@ def create_spend_chart(categories):
             string = string + " " + catperc[jitem]["listofls"][item]
         string = string + "\n"
     return string
-
-
-categories = []
-food = Category("Food")
-categories.append(food)
-food.deposit(25, "poop")
-food.deposit(30.5, "piss")
-food.deposit(45, "ass")
-food.deposit(73, "dicks")
-food.withdraw(43, "pouch")
-print(food)
-
-clothing = Category("Clothing")
-categories.append(clothing)
-food.transfer(100, clothing)
-print(clothing)
-print(create_spend_chart(categories))
 
