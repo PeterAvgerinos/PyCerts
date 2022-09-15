@@ -3,6 +3,7 @@ class Category:
         self.name = name
         self.ledger = []
         self.total = 0
+        self.spent = 0
 
     def __str__(self):
         spacesn = len(self.name)
@@ -20,11 +21,12 @@ class Category:
           self.ledger.append({"amount" : amount, "description" : ""})
         else:
           self.ledger.append({"amount" : amount, "description" : description})
-        self.total = self.total + amount
+        self.total += amount
 
     def withdraw(self, amount, description = None):
         if self.total > amount:
-            self.total = self.total - amount
+            self.total -= amount
+            self.spent += amount
             if description == None:
               self.ledger.append({"amount" : -amount, "description" : ""})
             else:
@@ -59,13 +61,13 @@ class Category:
             return True
 
 def create_spend_chart(categories):
-    total = 0
+    total_spent = 0
     catperc = []
     percentages = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0]
     for item in categories:
-        total = total + item.total
+        total_spent += item.spent
     for item in categories:
-        catperc.append({"name" : item.name, "Percentage" : (item.total/total)*100, "listofos" : [], "listofls" : []})
+        catperc.append({"name" : item.name, "Percentage" : (item.spent/total_spent)*100, "listofos" : [], "listofls" : []})
     string = "Percentage spent by category \n"
     maximum = catperc[0]["name"]
     for k in range(0, len(catperc)):
