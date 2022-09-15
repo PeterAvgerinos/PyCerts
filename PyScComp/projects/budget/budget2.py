@@ -9,26 +9,20 @@ class Category:
         string = ("*"*((30-spacesn)//2) + self.name.title() + ((30-spacesn)//2)*"*") + "\n"
         for item in range(0, len(self.ledger)):
             if len(self.ledger[item]["description"]) > 23:
-                string = string + self.ledger[item]["description"][0 : 23] + f'''{f'{float(self.ledger[item]["amount"]):.2f}':>7}''' + "\n"
+                string = string + (self.ledger[item]["description"][0 : 23] + " "*(7 - len(self.ledger[item]["amount"])) + self.ledger[item]["amount"]) + "\n"
             else:
-                string = string + self.ledger[item]["description"] + " "*(30 -len(self.ledger[item]["description"]) - len(f'{float(self.ledger[item]["amount"]):.2f}')) + f'{float(self.ledger[item]["amount"]):.2f}' + "\n"
-        string = string + ("Total: " + str(self.total))
+                string = string + (self.ledger[item]["description"][0 : 23] + " "*(30 -len(self.ledger[item]["description"]) - len(self.ledger[item]["amount"])) + (self.ledger[item]["amount"])) + "\n"
+        string = string + ("Total: " + str(self.total)) + "\n"
         return string
 
-    def deposit(self, amount, description = None):
-        if description == None:
-          self.ledger.append({"amount" : amount, "description" : ""})
-        else:
-          self.ledger.append({"amount" : amount, "description" : description})
+    def deposit(self, amount, description = ""):
+        self.ledger.append({"amount" : str(amount), "description" : description})
         self.total = self.total + amount
 
-    def withdraw(self, amount, description = None):
+    def withdraw(self, amount, description = ""):
         if self.total > amount:
             self.total = self.total - amount
-            if description == None:
-              self.ledger.append({"amount" : -amount, "description" : ""})
-            else:
-              self.ledger.append({"amount" : -amount, "description" : description})
+            self.ledger.append({"amount" : "-" + str(amount), "description" : description})
             return True
         else:
             return False
@@ -46,8 +40,8 @@ class Category:
 
     def transfer(self, amount, category):
         if self.total > amount:
-            self.withdraw(amount, f"Transfer to {category.name}")
-            category.deposit(amount, f"Transfer from {self.name}")
+            self.withdraw(amount, "transfer to [destination budget category]")
+            category.deposit(amount, "transfer from [source budget category]")
             return True
         else:
             return False
@@ -75,7 +69,7 @@ def create_spend_chart(categories):
     for i in range(0, len(catperc)):
         for j in range(0, len(percentages)):
             if catperc[i]["Percentage"] > percentages[j]:
-                catperc[i]["listofos"].append("o")
+                catperc[i]["listofos"].append("0")
             else:
                 catperc[i]["listofos"].append(" ")
             for k in range(0, len(maximum)):
@@ -87,15 +81,14 @@ def create_spend_chart(categories):
     for item in range(0, len(percentages)):
         string = string + f"{percentages[item]:>3}|"
         for jitem in range(0, len(catperc)):
-            string = string + " " + catperc[jitem]["listofos"][item] + " "
+            string = string + " " + catperc[jitem]["listofos"][item]
         string = string + "\n"
-    string = string + "    ----------\n"
+    string = string + "    ---------- \n"
 
     for item in range(0, len(maximum)):
-
-      string = string + "   "
-      for jitem in range(0, len(catperc)):
-          string = string + "  " + catperc[jitem]["listofls"][item]
-      if item != len(maximum):  
+        string = string + "    "
+        for jitem in range(0, len(catperc)):
+            string = string + " " + catperc[jitem]["listofls"][item]
         string = string + "\n"
     return string
+
