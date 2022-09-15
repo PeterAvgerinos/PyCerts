@@ -29,7 +29,17 @@ class Rectangle:
             string += "\n"
         return string
 
-r1 = Rectangle(10, 3)
+
+class Square(Rectangle):
+    def __init__(self, side):
+        super().__init__(side, side)
+
+    def set_side(self, side):
+        self.height = side
+        self.width = side
+
+
+r1 = Square(10)
 print(r1)
 print(r1.get_area())
 print(r1.get_picture())
