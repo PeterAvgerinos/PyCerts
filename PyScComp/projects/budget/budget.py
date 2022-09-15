@@ -94,10 +94,9 @@ def create_spend_chart(categories):
     string = string + "    ----------\n"
 
     for item in range(0, len(maximum)):
-
       string = string + "   "
+      print(item)
       for jitem in range(0, len(catperc)):
           string = string + "  " + catperc[jitem]["listofls"][item]
-      if item != len(maximum):  
-        string = string + "\n"
+      string = string + "\n"
     return string
