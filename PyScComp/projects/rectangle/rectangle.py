@@ -33,21 +33,24 @@ class Rectangle:
 class Square(Rectangle):
     def __init__(self, side):
         self.side = side
-        super().__init__(self.side,self.side)
+        super().__init__(side, side)
 
     def __str__(self):
         return f"Square(side={self.side})"
 
     def set_side(self, side):
         self.side = side
+        super().__init__(side, side)
 
 r1 = Square(10)
 print(r1)
-print(r1.get_area())
 print(r1.get_picture())
-print(isinstance(r1, Square))
-
+print(r1.get_perimeter())
+print(r1.get_diagonal())
+print(r1.get_area())
 r1.set_side(2)
 print(r1)
 print(r1.get_picture())
 print(r1.get_perimeter())
+print(r1.get_diagonal())
+print(r1.get_area())
