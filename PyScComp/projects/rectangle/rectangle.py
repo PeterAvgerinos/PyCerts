@@ -39,12 +39,15 @@ class Square(Rectangle):
         return f"Square(side={self.side})"
 
     def set_side(self, side):
-        self.height = side
-        self.width = side
-
+        self.side = side
 
 r1 = Square(10)
 print(r1)
 print(r1.get_area())
 print(r1.get_picture())
 print(isinstance(r1, Square))
+
+r1.set_side(2)
+print(r1)
+print(r1.get_picture())
+print(r1.get_perimeter())
