@@ -78,7 +78,6 @@ def create_spend_chart(categories):
                 except IndexError:
                     catperc[i]["listofls"].append(" ")
 
-
     for item in range(0, len(percentages)):
         string = string + f"{percentages[item]:>3}|"
         for jitem in range(0, len(catperc)):
