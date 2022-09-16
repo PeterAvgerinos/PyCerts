@@ -44,18 +44,3 @@ class Square(Rectangle):
     def set_side(self, side):
         self.side = side
         super().__init__(side, side)
-
-r1 = Square(10)
-print(r1)
-print(r1.get_picture())
-print(r1.get_perimeter())
-print(r1.get_diagonal())
-print(r1.get_diagonal())
-r2 = Square(2)
-print(r2)
-print(r2.get_picture())
-print(r2.get_perimeter())
-print(r2.get_diagonal())
-print(r2.get_area())
-print(r1.get_amount_inside(r2))
-
