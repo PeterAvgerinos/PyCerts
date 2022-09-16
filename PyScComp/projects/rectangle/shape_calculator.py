@@ -2,6 +2,7 @@ class Rectangle:
     def __init__(self, width, height):
         self.width = width
         self.height = height
+        self.string = ""
 
     def set_width(self, width):
         self.width = width
@@ -22,14 +23,15 @@ class Rectangle:
         return ((self.width**2 + self.height**2)** .5)
 
     def get_picture(self):
-        string = ""
+        self.string = ""
         if self.height > 50 or self.width > 50:
-            return "Too big for picture."
+            self.string = "Too big for picture."
+            return self.string
         for _ in range(0, self.height):
             for _ in range(0, self.width):
-                string += "*"
-            string += "\n"
-        return string
+                self.string += "*"
+            self.string += "\n"
+        return self.string
 
     def get_amount_inside(self, shape):
         numbers = self.get_area()//shape.get_area()
