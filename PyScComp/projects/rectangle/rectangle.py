@@ -29,6 +29,9 @@ class Rectangle:
             string += "\n"
         return string
 
+    def get_amount_inside(self, shape):
+        numbers = self.get_area()//shape.get_area()
+        return numbers
 
 class Square(Rectangle):
     def __init__(self, side):
@@ -48,9 +51,11 @@ print(r1.get_picture())
 print(r1.get_perimeter())
 print(r1.get_diagonal())
 print(r1.get_area())
-r1.set_side(2)
-print(r1)
-print(r1.get_picture())
-print(r1.get_perimeter())
-print(r1.get_diagonal())
-print(r1.get_area())
+r2 = Square(2)
+print(r2)
+print(r2.get_picture())
+print(r2.get_perimeter())
+print(r2.get_diagonal())
+print(r2.get_area())
+print(r1.get_amount_inside(r2))
+
