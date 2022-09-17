@@ -1,5 +1,5 @@
 class Rectangle(object):
-    def __init__(self, width = None, height= None):
+    def __init__(self, width, height):
         self.width = width
         self.height = height
         self.string = ""
@@ -14,13 +14,13 @@ class Rectangle(object):
         self.heigth = height
 
     def get_area(self):
-        return self.width*self.height
+        return self.width()*self.height()
 
     def get_perimeter(self):
-        return 2*self.width + 2*self.height
+        return 2*self.width()+ 2*self.height()
 
     def get_diagonal(self):
-        return ((self.width**2 + self.height**2)** .5)
+        return ((self.width()**2 + self.height()**2)** .5)
 
     def get_picture(self):
         self.string = ""
@@ -49,6 +49,11 @@ class Square(Rectangle):
         self.side = side
 
 rect1 = Rectangle(5, 3)
+print(rect1)
 rect1.set_height(4)
 rect1.set_width(2)
 print(rect1)
+print(rect1)
+print(rect1)
+print(rect1)
+
