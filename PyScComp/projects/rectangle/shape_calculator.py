@@ -1,17 +1,17 @@
-class Rectangle:
+class Rectangle(object):
     def __init__(self, width = None, height= None):
         self.width = width
         self.height = height
         self.string = ""
+
+    def __str__(self):
+        return f"Rectangle(width={self.width}, height={self.height})"
 
     def set_width(self, width):
         self.width = width
 
     def set_height(self, height):
         self.heigth = height
-
-    def __str__(self):
-        return f"Rectangle(width={self.width}, height={self.height})"
 
     def get_area(self):
         return self.width*self.height
@@ -47,4 +47,8 @@ class Square(Rectangle):
 
     def set_side(self, side):
         self.side = side
-        super().__init__(self.side, self.side)
+
+rect1 = Rectangle(5, 3)
+rect1.set_height(4)
+rect1.set_width(2)
+print(rect1)
