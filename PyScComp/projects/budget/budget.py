@@ -90,7 +90,7 @@ def create_spend_chart(categories):
         string = string + f"{percentages[item]:>3}|"
         for jitem in range(0, len(catperc)):
             string = string + " " + catperc[jitem]["listofos"][item] + " "
-        string = string + "\n"
+        string = string + " \n"
     string = string + "    ----------\n"
 
     for item in range(0, len(maximum)):
@@ -98,5 +98,8 @@ def create_spend_chart(categories):
       print(item)
       for jitem in range(0, len(catperc)):
           string = string + "  " + catperc[jitem]["listofls"][item]
-      string = string + "\n"
+      if item == len(maximum) - 1:
+          string = string + "  "
+      else:
+          string = string + "  \n"
     return string
