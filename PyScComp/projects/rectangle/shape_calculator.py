@@ -50,6 +50,12 @@ class Square(Rectangle):
         super().set_height(side)
         self.side = side
 
+    def set_width(self, width):
+        self.set_side(width)
+
+    def set_height(self, height):
+        self.set_side(height)
+
 sqr1 = Square(3)
 print(sqr1)
 sqr1.set_side(2)
