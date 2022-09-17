@@ -50,7 +50,3 @@ class Square(Rectangle):
         super().set_height(side)
         self.side = side
 
-
-rect1 = Square(3)
-rect1.set_side(4)
-print(rect1)
