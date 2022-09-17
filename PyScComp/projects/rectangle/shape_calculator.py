@@ -54,7 +54,7 @@ class Square(Rectangle):
         self.set_side(width)
 
     def set_height(self, height):
-        self.set_side(height)
+        self.set_height(height)
 
 sqr1 = Square(3)
 print(sqr1)
