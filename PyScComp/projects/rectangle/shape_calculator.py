@@ -1,5 +1,5 @@
 class Rectangle:
-    def __init__(self, width, height):
+    def __init__(self, width = None, height= None):
         self.width = width
         self.height = height
         self.string = ""
@@ -38,7 +38,7 @@ class Rectangle:
         return numbers
 
 class Square(Rectangle):
-    def __init__(self, side):
+    def __init__(self, side = None):
         self.side = side
         super().__init__(self.side, self.side)
 
