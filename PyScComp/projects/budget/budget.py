@@ -68,7 +68,7 @@ def create_spend_chart(categories):
         total_spent += item.spent
     for item in categories:
         catperc.append({"name" : item.name, "Percentage" : (item.spent/total_spent)*100, "listofos" : [], "listofls" : []})
-    string = "Percentage spent by category \n"
+    string = "Percentage spent by category\n"
     maximum = catperc[0]["name"]
     for k in range(0, len(catperc)):
         if len(catperc[k]["name"]) > len(maximum):
