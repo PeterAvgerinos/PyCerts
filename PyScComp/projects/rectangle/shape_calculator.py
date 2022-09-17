@@ -46,9 +46,10 @@ class Square(Rectangle):
         return f"Square(side={self.side})"
 
     def set_side(self, side):
-        self.side = side
+        self.set_width(side)
+        self.set_height(side)
 
-rect1 = Rectangle(3, 5)
-rect1.set_width(2)
-rect1.set_height(4)
+
+rect1 = Square(3)
+rect1.set_side(4)
 print(rect1)
