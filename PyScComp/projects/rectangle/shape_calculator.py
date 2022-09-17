@@ -11,16 +11,16 @@ class Rectangle(object):
         self.width = width
 
     def set_height(self, height):
-        self.heigth = height
+        self.height = height
 
     def get_area(self):
-        return self.width()*self.height()
+        return self.width*self.height
 
     def get_perimeter(self):
-        return 2*self.width()+ 2*self.height()
+        return 2*self.width + 2*self.height
 
     def get_diagonal(self):
-        return ((self.width()**2 + self.height()**2)** .5)
+        return ((self.width**2 + self.height**2)** .5)
 
     def get_picture(self):
         self.string = ""
@@ -48,12 +48,7 @@ class Square(Rectangle):
     def set_side(self, side):
         self.side = side
 
-rect1 = Rectangle(5, 3)
-print(rect1)
-rect1.set_height(4)
+rect1 = Rectangle(3, 5)
 rect1.set_width(2)
+rect1.set_height(4)
 print(rect1)
-print(rect1)
-print(rect1)
-print(rect1)
-
