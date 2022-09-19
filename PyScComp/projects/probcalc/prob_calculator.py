@@ -14,8 +14,10 @@ def funciton(**data):
     contents = []
     for item in data:
         i = 0
+        print(data[item])
         for _ in range(0, data[item]):
-            contents.append(list(data.keys()))
+            contents.append(list(data.keys())[i])
+            print(list(data.keys())[i])
         i += 1
     print(contents)
 
