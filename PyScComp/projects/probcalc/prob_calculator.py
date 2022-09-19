@@ -13,12 +13,10 @@
 def funciton(**data):
     contents = []
     for item in data:
-        i = 0
         print(data[item])
         for _ in range(0, data[item]):
-            contents.append(list(data.keys())[i])
-            print(list(data.keys())[i])
-        i += 1
+            contents.append(list(data.keys())[len(item)])
+            print(list(data.keys())[item.split(",")[0]])
     print(contents)
 
 funciton(black=6, red=4, green=3)
