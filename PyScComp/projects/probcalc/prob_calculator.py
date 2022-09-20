@@ -1,10 +1,12 @@
+import copy
+import random
 
 class Hat:
     def __init__(self, **data):
         self.contents = []
         self.datakeys = list(data.keys())
         self.datavalues = list(data.values())
-        for item in range(0, len(list(data.keys()))):
+        for item in range(0, len(self.datakeys)):
             for _ in range(0 ,self.datavalues[item]):
                 self.contents.append(self.datakeys[item])
 
