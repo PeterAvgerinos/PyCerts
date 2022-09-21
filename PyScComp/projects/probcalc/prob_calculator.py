@@ -15,7 +15,7 @@ class Hat:
 
     def draw(self, count):
         print(self.contents)
-        for item in count:
+        for _ in range(0, count):
             randint = random.randint(0, len(self.contents))
             self.contents.pop(randint)
         print(self.contents)
