@@ -13,13 +13,14 @@ class Hat:
     def __str__(self):
         return str(self.contents)
 
-    def draw(self):
-        randint = random.randint(0, len(self.contents))
+    def draw(self, count):
         print(self.contents)
-        self.contents.pop(randint)
+        for item in count:
+            randint = random.randint(0, len(self.contents))
+            self.contents.pop(randint)
         print(self.contents)
 
 
 hat = Hat(black=6, red=4, green=3)
 print(hat)
-hat.draw()
+hat.draw(3)
