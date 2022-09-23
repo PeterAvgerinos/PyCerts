@@ -21,7 +21,28 @@ class Hat:
                 self.contents.pop(randint)
             return self.contents
 
+    def contains(self, other):
+        for i in range(len(self.contents) - len(other.contents) + 1):
+            for j in range(len(other.contents)):
+                if self.contents[i + j] != other.contents[j]:
+                    break
+            else:
+                return True
+        return False
+
+def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+    m = 0
+    hat2 = Hat(**expected_balls)
+    for _ in range(0, num_experiments):
+        temp = hat
+        temp.draw(num_balls_drawn)
+        if temp == expected_balls:
+            m += 1
+    probability = m/num_experiments
+    return probability
+
 hat = Hat(black=6, red=4, green=3)
+hat2 = Hat(black =1, red=2, green = 1)
 print(hat)
-hat.draw(4)
-print(hat)
+print(hat2)
+print(hat.contains(hat2))
