@@ -28,7 +28,7 @@ class Hat:
             if other.contents[i] in temp.contents:
                 temp.contents.remove(other.contents[i])
                 j += 1
-        return j == len(other.contents) - 1
+        return j == len(other.contents)
 
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     m = 0
@@ -42,7 +42,7 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     return probability
 
 hat = Hat(black=6, red=4, green=3)
-hat2 = Hat(black =1, red=2, green = 1)
+hat2 = Hat(black =1, green = 1, red=2)
 print(hat)
 print(hat2)
 print(hat.contains(hat2))
