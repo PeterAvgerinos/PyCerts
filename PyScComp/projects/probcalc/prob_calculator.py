@@ -22,13 +22,11 @@ class Hat:
             return self.contents
 
     def contains(self, other):
-        for i in range(len(self.contents) - len(other.contents) + 1):
-            for j in range(len(other.contents)):
-                if self.contents[i + j] != other.contents[j]:
-                    break
-            else:
-                return True
-        return False
+        j = 0
+        for i in range(0, len(other.contents)):
+            if other.contents[i] in self.contents:
+                j += 1
+        return j == len(other.contents) - 1
 
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     m = 0
