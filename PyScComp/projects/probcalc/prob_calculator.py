@@ -16,13 +16,12 @@ class Hat:
         if count > len(self.contents):
             return self.contents
         else:
-            print(self.contents)
             for _ in range(0, count):
                 randint = random.randint(0, len(self.contents) - 1)
                 self.contents.pop(randint)
-            print(self.contents)
             return self.contents
 
 hat = Hat(black=6, red=4, green=3)
 print(hat)
 hat.draw(4)
+print(hat)
