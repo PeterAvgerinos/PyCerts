@@ -16,6 +16,9 @@ class Hat:
     def getcontents(self):
         return self.contents
 
+    def setcontents(self, contents):
+        self.contents = contents
+
     def draw(self, count):
         drawn = []
         if count > len(self.contents):
@@ -40,13 +43,17 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     m = 0
     hat2 = Hat(**expected_balls)
     for _ in range(0, num_experiments):
-        temp = hat
+        temp = copy.deepcopy(hat)
         drawn = temp.draw(num_balls_drawn)
-        if hat2.contains(drawn):
+        hat3 = Hat()
+        hat3.setcontents(drawn)
+        if hat3.contains(hat2.getcontents()):
             m += 1
     probability = m/num_experiments
     return probability
 
 hat = Hat(black=6, red=4, green=3)
+# drawn = hat.draw(5)
+# print(drawn)
 probability = experiment(hat, expected_balls={"red":2,"green":1}, num_balls_drawn=5, num_experiments=2000)
 print(probability)
