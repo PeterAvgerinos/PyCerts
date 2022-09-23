@@ -23,8 +23,10 @@ class Hat:
 
     def contains(self, other):
         j = 0
+        temp = self
         for i in range(0, len(other.contents)):
-            if other.contents[i] in self.contents:
+            if other.contents[i] in temp.contents:
+                temp.contents.remove(other.contents[i])
                 j += 1
         return j == len(other.contents) - 1
 
