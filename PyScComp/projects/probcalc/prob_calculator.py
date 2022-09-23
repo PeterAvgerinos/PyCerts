@@ -24,12 +24,6 @@ class Hat:
             print(self.contents)
             return self.contents
 
-
-
-def experiment(hat, **expected_balls, num_balls_drawn, num_experiments):
-    pass
-
-
 hat = Hat(black=6, red=4, green=3)
 print(hat)
 hat.draw(4)
