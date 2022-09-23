@@ -30,7 +30,7 @@ class Hat:
                 j += 1
         return j == len(other.contents)
 
-def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+def experiment(hat, num_balls_drawn, num_experiments, **expected_balls):
     m = 0
     hat2 = Hat(**expected_balls)
     for _ in range(0, num_experiments):
@@ -42,7 +42,8 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     return probability
 
 hat = Hat(black=6, red=4, green=3)
-hat2 = Hat(black =1, green = 1, red=2)
-print(hat)
-print(hat2)
+hat2 = Hat(purple=2, green=1)
 print(hat.contains(hat2))
+probability = experiment(hat, expected_balls={"red":2,"green":1}, num_balls_drawn=5, num_experiments=2000)
+
+print(probability)
