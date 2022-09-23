@@ -13,14 +13,13 @@ class Hat:
         return str(self.contents)
 
     def draw(self, count):
-        drawn = []
         if count > len(self.contents):
             return self.contents
         else:
             for _ in range(0, count):
                 randint = random.randint(0, len(self.contents) - 1)
-                drawn.append(self.contents[randint])
-            return drawn
+                self.contents.pop(randint)
+            return self.contents
 
     def contains(self, other):
         j = 0
@@ -35,8 +34,9 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     m = 0
     hat2 = Hat(**expected_balls)
     for _ in range(0, num_experiments):
-        drawn = hat.draw(num_balls_drawn)
-        if drawn.contains(hat2):
+        temp = hat
+        temp.draw(num_balls_drawn)
+        if temp.contains(hat2):
             m += 1
     probability = m/num_experiments
     return probability

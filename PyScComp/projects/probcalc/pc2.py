@@ -41,8 +41,8 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     hat2 = Hat(**expected_balls)
     for _ in range(0, num_experiments):
         temp = hat
-        temp.draw(num_balls_drawn)
-        if temp.contains(hat2.getcontents()):
+        drawn = temp.draw(num_balls_drawn)
+        if hat2.contains(drawn):
             m += 1
     probability = m/num_experiments
     return probability
