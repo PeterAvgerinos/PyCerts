@@ -1,1 +1,6 @@
+Libraries:
+    NumPy
+    Pandas
 
+Tools:
+    Jupyter Notebook
