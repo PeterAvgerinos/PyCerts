@@ -1,6 +1,11 @@
 Libraries:
     NumPy
     Pandas
+    Matplotlib
+    Seaborn
+    Statsmodels
+    Scipy
+    Scikit-learn
 
 Tools:
     Jupyter Notebook
