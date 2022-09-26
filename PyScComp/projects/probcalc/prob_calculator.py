@@ -40,11 +40,3 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
             m += 1
     probability = m/num_experiments
     return probability
-
-hat = Hat(black=6, red=4, green=3)
-probability = experiment(hat, expected_balls={"red":2,"green":1}, num_balls_drawn=5, num_experiments=2000)
-print(probability)
-exp = {"red":2, "green":1}
-hat3 = Hat(**exp)
-print(hat3)
-
