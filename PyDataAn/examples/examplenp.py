@@ -1,8 +1,6 @@
 import numpy as np
 
-
-a = np.zeros((7,7))
-ones = np.ones((5,5))
-ones[2,2] = 5
-a[1:6,1:6] = ones
+a = np.array(([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]))
+b = np.max(a, axis=1).sum()
 print(a)
+print(b)
