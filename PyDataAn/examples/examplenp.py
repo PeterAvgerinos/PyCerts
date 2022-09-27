@@ -1,8 +1,8 @@
 import numpy as np
-import matplotlib as plt
 
-b = np.array([[1,2,3,1,2,31,2,31,2,3],[2,3,41,2,31,2,31,2,31,2]], dtype='int32')
-a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
-c = np.identity(3)
-c = np.repeat(b, 3)
-print(c)
+
+a = np.zeros((7,7))
+ones = np.ones((5,5))
+ones[2,2] = 5
+a[1:6,1:6] = ones
+print(a)
