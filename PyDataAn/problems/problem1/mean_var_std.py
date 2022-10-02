@@ -9,6 +9,10 @@ def calculate(list):
 try:
     data = np.array(list)
     data = data.reshape((3,3))
+    data = data.reshape(9)
     print(data)
+    calculations = {}
+    mean = 
+
 except ValueError:
-    print("Oopsie daisy poopie lazy")
+    print("List must contain nine numbers.")
