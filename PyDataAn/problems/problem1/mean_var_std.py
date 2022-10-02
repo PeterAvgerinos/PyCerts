@@ -6,6 +6,9 @@ def calculate(list):
     data = np.array(list, [3,3])
     print(data)
 
-data = np.array(list)
-data = data.reshape((3,3))
-print(data)
+try:
+    data = np.array(list)
+    data = data.reshape((3,3))
+    print(data)
+except ValueError:
+    print("Oopsie daisy poopie lazy")
