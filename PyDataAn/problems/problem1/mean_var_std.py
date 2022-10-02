@@ -13,7 +13,7 @@ def calculate(list):
     standard_deviation = [np.std(data, axis=0, dtype=np.float32), np.std(data, axis=1, dtype=np.float32), np.std(data, dtype=np.float32)]
     maximum = [np.max(data, axis=0), np.max(data, axis=1), np.max(data)]
     minimum = [np.min(data, axis=0), np.min(data, axis=1), np.min(data)]
-    total = [np.sum(data, axis=0, dtype=np.float32), np.sum(data, axis=1, dtype=np.float32), np.sum(data, dtype=np.float32)]
+    total = [np.sum(data, axis=0, dtype=np.int32), np.sum(data, axis=1, dtype=np.int32), np.sum(data, dtype=np.int32)]
     calculations = {'mean' : mean,
             'variance' : variance,
             'standard_deviation' : standard_deviation,
