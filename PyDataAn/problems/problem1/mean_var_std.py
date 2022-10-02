@@ -3,16 +3,23 @@ import numpy as np
 list = [0,1,2,3,4,5,6,7,8]
 
 def calculate(list):
-    data = np.array(list, [3,3])
-    print(data)
-
-try:
+    if len(list) != 9:
+        raise ValueError("List must contain nine numbers.")
     data = np.array(list)
     data = data.reshape((3,3))
-    data = data.reshape(9)
-    print(data)
     calculations = {}
-    mean = 
+    mean = []
+    variance = []
+    standard_deviation = []
+    maximum = []
+    minimum = []
+    total = []
+    calculations = {'mean' : mean,
+            'variance' : variance,
+            'standard_deviation' : standard_deviation,
+            'maximum' : maximum,
+            'minimum' : minimum,
+            'total' : total}
+    return calculations
 
-except ValueError:
-    print("List must contain nine numbers.")
+print(calculate(list))
