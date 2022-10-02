@@ -1,5 +1,5 @@
 import numpy as np
 
 def calculate(list):
-    calculations = 0
-    return calculations
+    data = np.array((3,3), list)
+    print(data)
