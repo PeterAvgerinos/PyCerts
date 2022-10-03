@@ -1,5 +1,7 @@
 import numpy as np
 
+list = [0,1,2,3,4,5,6,7,8]
+
 def calculate(list):
     if len(list) != 9:
         raise ValueError("List must contain nine numbers.")
@@ -20,3 +22,4 @@ def calculate(list):
             'total' : total}
     return calculations
 
+print(calculate(list))
