@@ -8,6 +8,7 @@ def calculate(list):
     data = np.array(list)
     data = data.reshape((3,3))
     calculations = {}
+    np.set_printoptions(precision=1)
     mean = [np.mean(data, axis=0, dtype = 'float32'), np.mean(data, axis=1, dtype = 'float32'), np.mean(data)]
     variance = [np.var(data, axis=0, dtype = 'float32'), np.var(data, axis=1, dtype = 'float32'), np.var(data)]
     standard_deviation = [np.std(data, axis=0, dtype = 'float32'), np.std(data, axis=1, dtype = 'float32'), np.std(data)]
