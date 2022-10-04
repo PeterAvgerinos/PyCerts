@@ -1,7 +1,5 @@
 import numpy as np
 
-list = [0,2,2,3,4,5,6,7,8]
-
 def calculate(list):
     if len(list) != 9:
         raise ValueError("List must contain nine numbers.")
@@ -17,9 +15,7 @@ def calculate(list):
     calculations = {'mean' : mean,
             'variance' : variance,
             'standard deviation' : standard_deviation,
-            'maximum' : maximum,
-            'minimum' : minimum,
-            'total' : total}
+            'max' : maximum,
+            'min' : minimum,
+            'sum' : total}
     return calculations
-
-print(calculate(list))
