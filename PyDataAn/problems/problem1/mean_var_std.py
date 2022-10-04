@@ -16,7 +16,7 @@ def calculate(list):
     total = [np.sum(data, axis=0).tolist(), np.sum(data, axis=1).tolist(), np.sum(data)]
     calculations = {'mean' : mean,
             'variance' : variance,
-            'standard_deviation' : standard_deviation,
+            'standard deviation' : standard_deviation,
             'maximum' : maximum,
             'minimum' : minimum,
             'total' : total}
