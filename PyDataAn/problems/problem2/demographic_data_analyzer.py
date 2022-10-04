@@ -7,7 +7,7 @@ def calculate_demographic_data(print_data=True):
 
     # How many of each race are represented in this dataset? This should be a Pandas series with race names as the index labels.
     races = df['race'].unique()
-    race_count = pd.Series(df['race'], index = races)
+    race_count = pd.Series(df['race'].value_counts(), index = races)
 
     # What is the average age of men?
     average_age_men = None
@@ -16,7 +16,7 @@ def calculate_demographic_data(print_data=True):
     percentage_bachelors = None
 
     # What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?
-    # What percentage of people without advanced education make more than 50K?
+    # What percentage of people without advnced education make more than 50K?
 
     # with and without `Bachelors`, `Masters`, or `Doctorate`
     higher_education = None
