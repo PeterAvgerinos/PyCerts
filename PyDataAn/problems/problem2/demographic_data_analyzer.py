@@ -10,7 +10,8 @@ def calculate_demographic_data(print_data=True):
     print(df.head(5))
 
     # What is the average age of men?
-    average_age_men = df['sex'].value_counts()
+    filt = df['sex'] == 'Male'
+    average_age_men = df[filt].mean()
     print(average_age_men)
 
     # What is the percentage of people who have a Bachelor's degree?
