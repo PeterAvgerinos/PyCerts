@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 
 def calculate_demographic_data(print_data=True):
@@ -9,7 +10,8 @@ def calculate_demographic_data(print_data=True):
     race_count = pd.Series(df['race'].value_counts(), df['race'].unique())
 
     # What is the average age of men?
-    average_age_men = None
+    average_age_men = df.groupby('sex').age.mean()[1]
+    average_age_men = round(average_age_men, 1)
 
     # What is the percentage of people who have a Bachelor's degree?
     percentage_bachelors = None
