@@ -37,6 +37,8 @@ def calculate_demographic_data(print_data=True):
                         (df.education != 'Masters') |
                         (df.education != 'Doctorate')) &
                         (df.salary == '>50K')])*100/len(lower_education)
+    higher_education_rich = round(higher_education_rich, 1)
+    lower_education_rich = round(lower_education_rich, 1)
 
     # What is the minimum number of hours a person works per week (hours-per-week feature)?
     min_work_hours = None
