@@ -7,10 +7,10 @@ def calculate_demographic_data(print_data=True):
     df = pd.read_csv('adult.data.csv')
 
     # How many of each race are represented in this dataset? This should be a Pandas series with race names as the index labels.
-    race_count = pd.Series(df['race'].value_counts(), df['race'].unique())
+    race_count = df['race'].value_counts()
 
     # What is the average age of men?
-    average_age_men = df.groupby('sex').age.mean()[1]
+    average_age_men = df[df.sex == 'Male'].age.mean()
     average_age_men = round(average_age_men, 1)
 
     # What is the percentage of people who have a Bachelor's degree?
