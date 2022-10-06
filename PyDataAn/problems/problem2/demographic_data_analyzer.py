@@ -56,7 +56,6 @@ def calculate_demographic_data(print_data=True):
 
     # Identify the most popular occupation for those who earn >50K in India.
     popular_occupation = df.groupby(['native-country', 'salary', 'occupation']).agg({'salary' : 'count'})
-    popular_occupation = popular_occupation.groupby(level=0, group_keys=False).apply(lambda x: x)
     popular_occupation = popular_occupation.rename(columns = {'salary' : 'count'})
     popular_occupation = popular_occupation.reset_index()
     popular_occupation_india = popular_occupation[(popular_occupation['native-country'] == 'India') &
