@@ -21,23 +21,20 @@ def calculate_demographic_data(print_data=True):
     # What percentage of people without advnced education make more than 50K?
 
     # with and without `Bachelors`, `Masters`, or `Doctorate`
-    higher_education = df[(df.education == 'Bachelors') |
+    higher_education = len(df[(df.education == 'Bachelors') |
                         (df.education == 'Masters') |
-                        (df.education == 'Doctorate')]
-    lower_education = df[(df.education != 'Bachelors') |
-                        (df.education != 'Masters') |
-                        (df.education != 'Doctorate')]
-
+                        (df.education == 'Doctorate')])
+    lower_education = len(df) - higher_education
 
     # percentage with salary >50K
     higher_education_rich = len(df[((df.education == 'Bachelors') |
                                 (df.education == 'Masters') |
                                 (df.education == 'Doctorate')) &
-                                (df.salary == '>50K')])*100/len(higher_education)
-    lower_education_rich = len(df[((df.education != 'Bachelors') |
-                                (df.education != 'Masters') |
+                                (df.salary == '>50K')])*100/higher_education
+    lower_education_rich = len(df[((df.education != 'Bachelors') &
+                                (df.education != 'Masters') &
                                 (df.education != 'Doctorate')) &
-                                (df.salary == '>50K')])*100/len(lower_education)
+                                (df.salary == '>50K')])*100/lower_education
     higher_education_rich = round(higher_education_rich, 1)
     lower_education_rich = round(lower_education_rich, 1)
 
