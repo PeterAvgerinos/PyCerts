@@ -4,12 +4,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Import data
-df = None
+df = pd.read_csv('medical_examination.csv')
 
-# Add 'overweight' column
-df['overweight'] = None
+# Add 'overweight' columns
+df['overweight'] = df['weight']/((df['height']/100)*(df['height']/100))
+df['overweight'] = df['overweight'] > 25
+df['overweight'] = pd.get_dummies(df['overweight'])[True]
+
 
 # Normalize data by making 0 always good and 1 always bad. If the value of 'cholesterol' or 'gluc' is 1, make the value 0. If the value is more than 1, make the value 1.
+df['cholesterol'] = df['cholesterol'] > 1
+df['gluc'] = df['gluc'] > 1
+df['cholesterol'] = pd.get_dummies(df['cholesterol'])[True]
+df['gluc'] = pd.get_dummies(df['gluc'])[True]
 
 
 # Draw Categorical Plot
