@@ -9,5 +9,3 @@ Libraries:
 
 Tools:
     Jupyter Notebook
-
-testing git
