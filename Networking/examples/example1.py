@@ -1,11 +1,15 @@
 import socket
 
 #Gets private IP address
-host = socket.gethostbyname(socket.gethostname())
-port = 9090
-HOST = ''
+HOST = socket.gethostbyname(socket.gethostname())
+PORT = 9090
 
 #TCP Socket
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-print(host)
+server.bind((HOST, PORT))
+
+server.listen(5)
+
+while True:
+    communication_socket, address = server.accept()
 
