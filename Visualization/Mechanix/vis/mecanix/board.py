@@ -1,6 +1,6 @@
 import pygame
 from .constants import BLACK, RED, WIDTH, SQUARE_SIZE, MOUNT_SIZE
-from .gear import Gear
+from gear import Gear
 
 class Board(pygame.sprite.Sprite):
     def __init__(self):

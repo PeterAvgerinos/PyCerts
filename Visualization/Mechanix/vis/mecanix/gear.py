@@ -1,4 +1,4 @@
-from .constants import *
+from .constants import SQUARE_SIZE
 import pygame
 
 class Gear(pygame.sprite.Sprite):
