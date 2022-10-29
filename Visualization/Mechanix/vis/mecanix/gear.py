@@ -1,6 +1,5 @@
 from .constants import *
 import pygame
-from ..assets import *
 
 class Gear(pygame.sprite.Sprite):
     def __init__(self, row, col, color, width, height):

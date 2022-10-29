@@ -40,11 +40,15 @@ class Board(pygame.sprite.Sprite):
             pygame.draw.circle(win, BLACK, (WIDTH//2 - SQUARE_SIZE//2 - (square - 5)*SQUARE_SIZE+ 2*MOUNT_SIZE, SQUARE_SIZE*5+ 2*MOUNT_SIZE + 50), MOUNT_SIZE)
 
     def create_board(self):
-        # gear_group = pygame.sprite.Group()
-        # for row in range(8):
-        #     self.board.append([])
-        #     for j in range(8):
-        pass
+        gear_group = pygame.sprite.Group()
+        for row in range(7):
+            self.board.append([])
+            if row == 1:
+                for col in range(row + 1):
+                    self.board[row].append(Gear(row, col, 'green', 20, 20))
+            else:
+                for col in range(row + 2):
+                    self.board[row].append(Gear(row, col, 'green', 20, 20))
 
 
 
