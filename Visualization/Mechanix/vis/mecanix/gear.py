@@ -1,7 +1,13 @@
 from .constants import *
+import pygame
+from ..assets import *
 
-class Gear:
-    def __init__(self, row, col, color):
+class Gear(pygame.sprite.Sprite):
+    def __init__(self, row, col, color, width, height):
+        super().__init__()
+        self.image = pygame.Surface([width, height])
+        self.image.fill()
+        self.rect = self.image.get_rect()
         self.row = row
         self.col = col
         self.color = color
@@ -20,3 +26,9 @@ class Gear:
         pygame.draw.rect(win, self.color, (self.x, self.y, SQUARE_SIZE//2, SQUARE_SIZE//2))
         if not self.jammed:
             pass
+
+    def __repr__(self):
+        if self.jammed:
+            return 'Jammed!'
+        else:
+            return 'Not Jammed!'
