@@ -1,5 +1,5 @@
 import pygame
-from .constants import *
+from .constants import BLACK, RED, WIDTH, SQUARE_SIZE, MOUNT_SIZE
 from .gear import Gear
 
 class Board(pygame.sprite.Sprite):
@@ -40,7 +40,6 @@ class Board(pygame.sprite.Sprite):
             pygame.draw.circle(win, BLACK, (WIDTH//2 - SQUARE_SIZE//2 - (square - 5)*SQUARE_SIZE+ 2*MOUNT_SIZE, SQUARE_SIZE*5+ 2*MOUNT_SIZE + 50), MOUNT_SIZE)
 
     def create_board(self):
-        gear_group = pygame.sprite.Group()
         for row in range(7):
             self.board.append([])
             if row == 1:
@@ -51,6 +50,9 @@ class Board(pygame.sprite.Sprite):
                     self.board[row].append(Gear(row, col, 'green', 20, 20))
 
 
+board = Board()
+board.create_board()
+print(board.board)
 
     # def draw_squares(self, win):
     #     win.fill(BLACK)

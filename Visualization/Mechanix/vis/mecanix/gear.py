@@ -4,9 +4,6 @@ import pygame
 class Gear(pygame.sprite.Sprite):
     def __init__(self, row, col, color, width, height):
         super().__init__()
-        self.image = pygame.Surface([width, height])
-        self.image.fill()
-        self.rect = self.image.get_rect()
         self.row = row
         self.col = col
         self.color = color
