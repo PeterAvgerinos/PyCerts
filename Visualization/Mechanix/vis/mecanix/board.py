@@ -53,6 +53,8 @@ class Board(pygame.sprite.Sprite):
 board = Board()
 board.create_board()
 print(board.board)
+board.board[1][1].make_jammed()
+print(board.board)
 
     # def draw_squares(self, win):
     #     win.fill(BLACK)
