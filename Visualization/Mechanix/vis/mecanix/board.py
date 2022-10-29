@@ -6,7 +6,7 @@ class Board(pygame.sprite.Sprite):
     def __init__(self):
         self.board = []
         self.selected_piece = None
-        self.red_left = self.blue_left = 12
+        self.green_left = self.blue_left = 12
 
     def draw_squares(self, win):
         win.fill(BLACK)
@@ -40,7 +40,7 @@ class Board(pygame.sprite.Sprite):
         for row in range(6):
             self.board.append([])
             for col in range(row*2 + 1):
-                self.board[row].append(Gear(row, col, 'green', 20, 20))
+                self.board[row].append(Gear(row, col, 'transparent', 20, 20))
 
 board = Board()
 board.create_board()
