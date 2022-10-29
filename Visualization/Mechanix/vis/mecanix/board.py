@@ -1,7 +1,8 @@
 import pygame
 from .constants import *
+from .gear import Gear
 
-class Board:
+class Board(pygame.sprite.Sprite):
     def __init__(self):
         self.board = []
         self.selected_piece = None
@@ -39,6 +40,10 @@ class Board:
             pygame.draw.circle(win, BLACK, (WIDTH//2 - SQUARE_SIZE//2 - (square - 5)*SQUARE_SIZE+ 2*MOUNT_SIZE, SQUARE_SIZE*5+ 2*MOUNT_SIZE + 50), MOUNT_SIZE)
 
     def create_board(self):
+        # gear_group = pygame.sprite.Group()
+        # for row in range(8):
+        #     self.board.append([])
+        #     for j in range(8):
         pass
 
 
