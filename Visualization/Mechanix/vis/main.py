@@ -24,6 +24,7 @@ def main():
 
         board.draw_squares(WIN)
         board.draw_gear_mounts(WIN)
+        board.create_board(WIN)
         pygame.display.update()
 
 

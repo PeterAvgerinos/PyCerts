@@ -1,4 +1,4 @@
-from .constants import SQUARE_SIZE
+from .constants import SQUARE_SIZE, RED
 import pygame
 
 class Gear(pygame.sprite.Sprite):
@@ -27,7 +27,7 @@ class Gear(pygame.sprite.Sprite):
         self.jammed = True
 
     def draw(self, win):
-        pygame.draw.rect(win, self.color, (self.x, self.y, SQUARE_SIZE//2, SQUARE_SIZE//2))
+        pygame.draw.rect(win, RED, (self.x, self.y, SQUARE_SIZE//4, SQUARE_SIZE//4))
         if not self.jammed:
             pass
 
