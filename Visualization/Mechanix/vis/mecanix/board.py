@@ -19,7 +19,7 @@ class Board(pygame.sprite.Sprite):
 
     def draw_gear_mounts(self, win):
         for row in range(ROWS):
-            for col in range(row*2 + 1):
+            for col in range(row + 1):
                 if row != 0:
                     pygame.draw.circle(win, BLACK, (WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*row, SQUARE_SIZE*row + 2*MOUNT_SIZE + 50), MOUNT_SIZE)
                 else:
@@ -28,7 +28,7 @@ class Board(pygame.sprite.Sprite):
     def create_board(self, win):
         for row in range(ROWS):
             self.board.append([])
-            for col in range(row*2 + 1):
+            for col in range(row + 1):
                 if row != 0:
                     new_gear = Gear(row, col, 'transparent', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*row,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50)
                 else:
