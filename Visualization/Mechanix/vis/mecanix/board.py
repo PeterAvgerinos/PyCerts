@@ -1,5 +1,5 @@
 import pygame
-from .constants import BLACK, RED, WIDTH, SQUARE_SIZE, MOUNT_SIZE
+from .constants import BLACK, RED, WIDTH, SQUARE_SIZE, MOUNT_SIZE, ROWS
 from .gear import Gear
 
 class Board(pygame.sprite.Sprite):
@@ -9,7 +9,7 @@ class Board(pygame.sprite.Sprite):
         self.green_left = self.blue_left = 12
 
     def draw_squares(self, win):
-        for row in range(6):
+        for row in range(ROWS):
             for col in range(row + 1):
                 if row != 0: 
                     pygame.draw.rect(win, RED, (WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + (SQUARE_SIZE//2)*row, SQUARE_SIZE*row + 50, SQUARE_SIZE, SQUARE_SIZE))
@@ -18,7 +18,7 @@ class Board(pygame.sprite.Sprite):
 
 
     def draw_gear_mounts(self, win):
-        for row in range(6):
+        for row in range(ROWS):
             for col in range(row*2 + 1):
                 if row != 0:
                     pygame.draw.circle(win, BLACK, (WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*row, SQUARE_SIZE*row + 2*MOUNT_SIZE + 50), MOUNT_SIZE)
@@ -26,13 +26,13 @@ class Board(pygame.sprite.Sprite):
                     pygame.draw.circle(win, BLACK, (WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE, SQUARE_SIZE*row + 2*MOUNT_SIZE + 50), MOUNT_SIZE)
 
     def create_board(self, win):
-        for row in range(6):
+        for row in range(ROWS):
             self.board.append([])
             for col in range(row*2 + 1):
                 if row != 0:
-                    new_gear = gear(row, col, 'transparent', width//2 - square_size//2 - (row - col)*square_size + 2*mount_size,  square_size*row + 2*mount_size + 50)
+                    new_gear = Gear(row, col, 'transparent', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50)
                 else:
-                    new_gear = gear(row, col, 'transparent', width//2 - square_size//2 - (row - col)*square_size + 2*mount_size,  square_size*row + 2*mount_size + 50)
+                    new_gear = Gear(row, col, 'transparent', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50)
                 self.board[row].append(new_gear)
                 new_gear.draw(win)
 
