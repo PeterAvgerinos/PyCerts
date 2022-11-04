@@ -11,7 +11,7 @@ class Board(pygame.sprite.Sprite):
     def draw_squares(self, win):
         for row in range(ROWS):
             for col in range(row + 1):
-                if row != 0: 
+                if row != 0:
                     pygame.draw.rect(win, RED, (WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + (SQUARE_SIZE//2)*row, SQUARE_SIZE*row + 50, SQUARE_SIZE, SQUARE_SIZE))
                 else:
                     pygame.draw.rect(win, RED, (WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE, SQUARE_SIZE*row + 50, SQUARE_SIZE, SQUARE_SIZE))
