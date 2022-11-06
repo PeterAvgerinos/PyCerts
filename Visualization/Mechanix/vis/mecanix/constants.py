@@ -1,5 +1,12 @@
 import pygame
+from ..assets import *
 
+#Images
+BLUEGEAR = pygame.image.load("../assets/blue-gear-md.png").convert()
+GREENGEAR = pygame.image.load("../assets/imagination-movers-gears-md.png").convert()
+TARGETGEAR = pygame.image.load("../assets/green-gear.svg.med.png").convert()
+
+#Game
 WIDTH, HEIGHT = 1400, 1000
 ROWS, COLS = 10,10
 SQUARE_SIZE = 80
