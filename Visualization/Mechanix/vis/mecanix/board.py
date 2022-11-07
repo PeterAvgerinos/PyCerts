@@ -5,6 +5,7 @@ from .gear import Gear
 class Board(pygame.sprite.Sprite):
     def __init__(self):
         self.board = []
+        self.gear_group = pygame.sprite.Group()
         self.selected_piece = None
         self.green_left = self.blue_left = 12
 
@@ -26,7 +27,6 @@ class Board(pygame.sprite.Sprite):
                     pygame.draw.circle(win, BLACK, (WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE, SQUARE_SIZE*row + 2*MOUNT_SIZE + 50), MOUNT_SIZE)
 
     def create_board(self, win):
-        gear_group = pygame.sprite.Group()
         for row in range(ROWS):
             self.board.append([])
             for col in range(row + 1):
@@ -35,6 +35,9 @@ class Board(pygame.sprite.Sprite):
                 else:
                     new_gear = Gear(row, col, 'transparent', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, TARGETGEAR)
                 self.board[row].append(new_gear)
-                gear_group.add(new_gear)
+                self.gear_group.add(new_gear)
                 # new_gear.draw(win)
-        gear_group.draw(win)
+        self.gear_group.draw(win)
+
+    def update_board(self):
+        self.gear_group.update()
