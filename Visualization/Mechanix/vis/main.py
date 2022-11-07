@@ -2,6 +2,8 @@ import pygame
 from mecanix.constants import WIDTH, HEIGHT
 from mecanix.board import Board
 
+pygame.init()
+
 FPS = 60
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
