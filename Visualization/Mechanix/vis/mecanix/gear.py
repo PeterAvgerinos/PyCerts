@@ -6,6 +6,7 @@ class Gear(pygame.sprite.Sprite):
         super().__init__()
         self.image = image
         self.rect = self.image.get_rect()
+        self.image = pygame.transform.scale(self.image, (SQUARE_SIZE, SQUARE_SIZE))
         self.rect.center = (x, y)
         self.row = row
         self.col = col
