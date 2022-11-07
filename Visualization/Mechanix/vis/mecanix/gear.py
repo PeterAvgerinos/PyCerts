@@ -2,10 +2,9 @@ from .constants import SQUARE_SIZE, RED, WHITE, BLUEGEAR, GREENGEAR, TARGETGEAR
 import pygame
 
 class Gear(pygame.sprite.Sprite):
-    def __init__(self, row, col, color, x, y):
+    def __init__(self, row, col, color, x, y, image):
         super().__init__()
-        self.image = pygame.Surface([SQUARE_SIZE, SQUARE_SIZE])
-        self.image.fill(WHITE)
+        self.image = image
         self.rect = self.image.get_rect()
         self.row = row
         self.col = col
