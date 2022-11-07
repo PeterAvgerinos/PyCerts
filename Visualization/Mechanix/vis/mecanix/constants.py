@@ -14,6 +14,6 @@ BLUE = (0, 0, 255)
 TRANSPARENT = (0, 0, 0, 0)
 
 #Images
-BLUEGEAR = pygame.image.load("mecanix/assets/blue-gear-md.png")
-GREENGEAR = pygame.image.load("mecanix/assets/imagination-movers-gears-md.png")
-TARGETGEAR = pygame.image.load("mecanix/assets/green-gear.svg.med.png")
+BLUEGEAR = pygame.image.load("assets/blue-gear-md.png")
+GREENGEAR = pygame.image.load("assets/imagination-movers-gears-md.png")
+TARGETGEAR = pygame.image.load("assets/green-gear.svg.med.png")
