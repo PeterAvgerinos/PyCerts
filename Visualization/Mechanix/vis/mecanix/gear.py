@@ -1,4 +1,4 @@
-from .constants import SQUARE_SIZE, RED, WHITE, BLUEGEAR, GREENGEAR, TARGETGEAR
+from .constants import SQUARE_SIZE, RED, TRANSPARENT, WHITE, BLUEGEAR, GREENGEAR, TARGETGEAR
 import pygame
 
 class Gear(pygame.sprite.Sprite):
@@ -17,6 +17,13 @@ class Gear(pygame.sprite.Sprite):
 
     def set_color(self, color):
         self.color = color
+        if self.color == 'transparent':
+            pass
+        elif self.color == 'green':
+            self.image = GREENGEAR
+        else:
+            self.image = BLUEGEAR
+
 
     def set_pos(self, x, y):
         self.x = x
