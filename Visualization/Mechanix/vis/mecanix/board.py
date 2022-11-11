@@ -48,7 +48,10 @@ class Board(pygame.sprite.Sprite):
                 self.board[row].append(new_gear)
                 self.gear_group.add(new_gear)
                 # new_gear.draw(win)
-        self.gear_group.draw(win)
+        # self.gear_group.draw(win)
+        for row in range(ROWS):
+            for col in range(row + 1):
+                self.board[row][col].draw(win)
 
     def update_board(self):
         self.gear_group.update()
