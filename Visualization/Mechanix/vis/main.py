@@ -13,9 +13,10 @@ def main():
     run = True
     clock = pygame.time.Clock()
     board = Board()
-    board.draw_squares(WIN)
-    board.draw_gear_mounts(WIN)
+    # board.draw_squares(WIN)
+    # board.draw_gear_mounts(WIN)
     board.create_board(WIN)
+    print(board)
 
     while run:
         clock.tick(FPS)

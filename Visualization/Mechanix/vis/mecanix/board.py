@@ -27,6 +27,8 @@ class Board(pygame.sprite.Sprite):
                     pygame.draw.circle(win, BLACK, (WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE, SQUARE_SIZE*row + 2*MOUNT_SIZE + 50), MOUNT_SIZE)
 
     def create_board(self, win):
+        self.draw_squares(win)
+        self.draw_gear_mounts(win)
         for row in range(ROWS):
             self.board.append([])
             for col in range(row + 1):
@@ -50,3 +52,8 @@ class Board(pygame.sprite.Sprite):
         selected_gear = self.board[gear.row][gear.col]
         if not selected_gear.fixed:
             selected_gear.set_color(color)
+
+    def __repr__(self):
+        for row in range(ROWS):
+            for col in range(row + 1):
+                print(self.board[row][col].fixed, self.board[row][col].jammed)
