@@ -41,3 +41,8 @@ class Board(pygame.sprite.Sprite):
 
     def update_board(self):
         self.gear_group.update()
+
+    def move(self, gear, color):
+        gear = self.board[gear.row][gear.col]
+        if not gear.fixed:
+            gear.set_color(color)

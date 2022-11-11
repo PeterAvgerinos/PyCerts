@@ -12,6 +12,7 @@ class Gear(pygame.sprite.Sprite):
         self.col = col
         self.color = color
         self.jammed = False
+        self.fixed = False
         self.x = x
         self.y = y
 
@@ -23,7 +24,6 @@ class Gear(pygame.sprite.Sprite):
             self.image = GREENGEAR
         else:
             self.image = BLUEGEAR
-
 
     def set_pos(self, x, y):
         self.x = x
