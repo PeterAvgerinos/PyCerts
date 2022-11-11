@@ -31,7 +31,7 @@ class Gear(pygame.sprite.Sprite):
     def set_color(self, color):
         self.color = color
         if self.color == 'transparent':
-            pass
+            self.image = TRANSPARENT
         elif self.color == 'green':
             self.image = GREENGEAR
         elif self.color == 'blue':
@@ -49,6 +49,7 @@ class Gear(pygame.sprite.Sprite):
 
     def draw(self, win):
         pygame.draw.rect(win, RED, (self.x, self.y, SQUARE_SIZE//4, SQUARE_SIZE//4))
+        pygame.blit(win, self.image, (self.x, self.y))
         if not self.jammed:
             pass
 
