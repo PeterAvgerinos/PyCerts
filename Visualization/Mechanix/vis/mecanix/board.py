@@ -9,6 +9,11 @@ class Board(pygame.sprite.Sprite):
         self.selected_piece = None
         self.green_left = self.blue_left = 12
 
+    def __repr__(self):
+        for row in range(ROWS):
+            for col in range(row + 1):
+                print(self.board[row][col])
+
     def draw_squares(self, win):
         for row in range(ROWS):
             for col in range(row + 1):
@@ -53,7 +58,3 @@ class Board(pygame.sprite.Sprite):
         if not selected_gear.fixed:
             selected_gear.set_color(color)
 
-    def __repr__(self):
-        for row in range(ROWS):
-            for col in range(row + 1):
-                print(self.board[row][col])
