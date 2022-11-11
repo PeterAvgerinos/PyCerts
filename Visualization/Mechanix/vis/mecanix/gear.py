@@ -41,10 +41,10 @@ class Gear(pygame.sprite.Sprite):
         self.x = x
         self.y = y
 
-    def calc_pos(self):
+    # def calc_pos(self):
         # self.x = SQUARE_SIZE*self.col + SQUARE_SIZE//2
         # self.y = SQUARE_SIZE*self.row + SQUARE_SIZE//2
-        pass
+        # pass
 
     def make_jammed(self):
         self.jammed = True

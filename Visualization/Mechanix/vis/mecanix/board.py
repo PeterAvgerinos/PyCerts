@@ -58,3 +58,6 @@ class Board(pygame.sprite.Sprite):
         if not selected_gear.fixed:
             selected_gear.set_color(color)
 
+    def get_gear(self, row, col):
+        return self.board[row][col]
+
