@@ -1,5 +1,5 @@
 import pygame
-from .constants import BLACK, BLUEGEAR, RED, TARGETGEAR, WIDTH, SQUARE_SIZE, MOUNT_SIZE, ROWS, BLUEGEAR, TARGETGEAR
+from .constants import BLACK, BLUEGEAR, RED, TARGETGEAR, TRANSPARENT, WIDTH, SQUARE_SIZE, MOUNT_SIZE, ROWS, BLUEGEAR, TARGETGEAR
 from .gear import Gear
 
 class Board(pygame.sprite.Sprite):
@@ -38,7 +38,7 @@ class Board(pygame.sprite.Sprite):
             self.board.append([])
             for col in range(row + 1):
                 if row != 0:
-                    new_gear = Gear(row, col, 'transparent', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*row,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, BLUEGEAR)
+                    new_gear = Gear(row, col, 'transparent', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*row,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, TRANSPARENT)
                     if row == ROWS - 1:
                         if col == 0 or col == ROWS-1:
                             new_gear.make_fixed()

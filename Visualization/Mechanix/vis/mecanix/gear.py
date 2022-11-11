@@ -34,17 +34,12 @@ class Gear(pygame.sprite.Sprite):
             pass
         elif self.color == 'green':
             self.image = GREENGEAR
-        else:
+        elif self.color == 'blue':
             self.image = BLUEGEAR
 
     def set_pos(self, x, y):
         self.x = x
         self.y = y
-
-    # def calc_pos(self):
-        # self.x = SQUARE_SIZE*self.col + SQUARE_SIZE//2
-        # self.y = SQUARE_SIZE*self.row + SQUARE_SIZE//2
-        # pass
 
     def make_jammed(self):
         self.jammed = True
