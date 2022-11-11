@@ -46,7 +46,14 @@ class Gear(pygame.sprite.Sprite):
             pass
 
     def __repr__(self):
+        out = ''
         if self.jammed:
-            return 'Jammed!'
+            out += 'Jammed!'
         else:
-            return 'Not Jammed!'
+            out += 'Not Jammed!'
+        if self.fixed:
+            out += 'and Fixed!'
+        else:
+            out += 'and Not Fixed'
+        return out
+

@@ -35,7 +35,7 @@ class Board(pygame.sprite.Sprite):
                 if row != 0:
                     new_gear = Gear(row, col, 'transparent', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*row,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, BLUEGEAR)
                     if row == ROWS - 1:
-                        if col == 0 | col == ROWS-1:
+                        if col == 0 or col == ROWS-1:
                             new_gear.make_fixed()
                 else:
                     new_gear = Gear(row, col, 'transparent', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, TARGETGEAR)
@@ -56,4 +56,4 @@ class Board(pygame.sprite.Sprite):
     def __repr__(self):
         for row in range(ROWS):
             for col in range(row + 1):
-                print(self.board[row][col].fixed, self.board[row][col].jammed)
+                print(self.board[row][col])
