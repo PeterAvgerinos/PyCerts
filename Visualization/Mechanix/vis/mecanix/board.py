@@ -53,11 +53,10 @@ class Board(pygame.sprite.Sprite):
     def update_board(self):
         self.gear_group.update()
 
-    def move(self, gear, color, win):
+    def move(self, gear, color):
         selected_gear = self.board[gear.row][gear.col]
         if not selected_gear.fixed:
             selected_gear.set_color(color)
-            win.blit(selected_gear(selected_gear.image, (selected_gear.x, selected_gear.y)))
 
     def get_gear(self, row, col):
         return self.board[row][col]
