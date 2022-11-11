@@ -18,7 +18,7 @@ def main():
     board.create_board(WIN)
     print (board.get_gear(1,1).color)
     gear = board.get_gear(1,1)
-    board.move(gear, 'green')
+    board.move(gear, 'green', WIN)
     print (board.get_gear(1,1).color)
 
     while run:
