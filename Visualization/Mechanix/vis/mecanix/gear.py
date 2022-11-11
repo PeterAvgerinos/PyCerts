@@ -25,7 +25,7 @@ class Gear(pygame.sprite.Sprite):
         if self.fixed:
             out += 'and Fixed!'
         else:
-            out += 'and Not Fixed'
+            out += 'and Not Fixed!'
         return out
 
     def set_color(self, color):
