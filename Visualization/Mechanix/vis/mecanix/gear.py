@@ -16,6 +16,18 @@ class Gear(pygame.sprite.Sprite):
         self.x = x
         self.y = y
 
+    def __repr__(self):
+        out = ''
+        if self.jammed:
+            out += 'Jammed!'
+        else:
+            out += 'Not Jammed!'
+        if self.fixed:
+            out += 'and Fixed!'
+        else:
+            out += 'and Not Fixed'
+        return out
+
     def set_color(self, color):
         self.color = color
         if self.color == 'transparent':
@@ -45,15 +57,4 @@ class Gear(pygame.sprite.Sprite):
         if not self.jammed:
             pass
 
-    def __repr__(self):
-        out = ''
-        if self.jammed:
-            out += 'Jammed!'
-        else:
-            out += 'Not Jammed!'
-        if self.fixed:
-            out += 'and Fixed!'
-        else:
-            out += 'and Not Fixed'
-        return out
 
