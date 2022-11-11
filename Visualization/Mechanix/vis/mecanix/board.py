@@ -51,8 +51,9 @@ class Board(pygame.sprite.Sprite):
         self.gear_group.draw(win)
 
     def update_board(self, win):
-        self.gear_group.update()
-        self.gear_group.draw(win)
+        # self.gear_group.update()
+        for gear in self.gear_group:
+            win.blit(gear.image, gear.rect)
 
     def move(self, gear, color):
         selected_gear = self.board[gear.row][gear.col]
