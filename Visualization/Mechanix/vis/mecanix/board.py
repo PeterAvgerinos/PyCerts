@@ -32,8 +32,12 @@ class Board(pygame.sprite.Sprite):
             for col in range(row + 1):
                 if row != 0:
                     new_gear = Gear(row, col, 'transparent', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*row,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, BLUEGEAR)
+                    if row == ROWS - 1:
+                        if col == 0 | col == ROWS-1:
+                            new_gear.make_fixed()
                 else:
                     new_gear = Gear(row, col, 'transparent', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, TARGETGEAR)
+                    new_gear.make_fixed()
                 self.board[row].append(new_gear)
                 self.gear_group.add(new_gear)
                 # new_gear.draw(win)
@@ -43,6 +47,6 @@ class Board(pygame.sprite.Sprite):
         self.gear_group.update()
 
     def move(self, gear, color):
-        gear = self.board[gear.row][gear.col]
-        if not gear.fixed:
-            gear.set_color(color)
+        selected_gear = self.board[gear.row][gear.col]
+        if not selected_gear.fixed:
+            selected_gear.set_color(color)

@@ -37,6 +37,9 @@ class Gear(pygame.sprite.Sprite):
     def make_jammed(self):
         self.jammed = True
 
+    def make_fixed(self):
+        self.fixed = True
+
     def draw(self, win):
         pygame.draw.rect(win, RED, (self.x, self.y, SQUARE_SIZE//4, SQUARE_SIZE//4))
         if not self.jammed:
