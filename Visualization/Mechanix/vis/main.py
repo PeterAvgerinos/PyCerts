@@ -19,12 +19,11 @@ def main():
     run = True
     clock = pygame.time.Clock()
     board = Board()
-    # board.draw_squares(WIN)
-    # board.draw_gear_mounts(WIN)
     board.create_board(WIN)
-    board.move(board.get_gear(2,2), 'green', WIN)
-    board.move(board.get_gear(2,2), 'blue', WIN)
-    board.move(board.get_gear(2,2), 'transparent', WIN)
+    board.move(board.get_gear(3,2), 'green', WIN)
+    board.move(board.get_gear(4,2), 'green', WIN)
+    board.move(board.get_gear(5,2), 'green', WIN)
+    board.move(board.get_gear(6,2), 'green', WIN)
 
     while run:
         clock.tick(FPS)
@@ -37,7 +36,7 @@ def main():
                 pos = pygame.mouse.get_pos()
                 row, col = get_pos_from_mouse(pos)
                 gear = board.get_gear(row, col)
-                board.move(gear, 'green', WIN)
+                board.move(gear, 'transparent', WIN)
 
         board.update(WIN)
         pygame.display.update()
