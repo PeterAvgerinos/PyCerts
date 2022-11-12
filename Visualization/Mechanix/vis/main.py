@@ -12,8 +12,8 @@ pygame.display.set_caption('Mecanix: The Gear Game')
 
 def get_pos_from_mouse(pos):
     x, y = pos
-    row = y//SQUARE_SIZE
-    col = x//SQUARE_SIZE
+    row = (x - 300)//SQUARE_SIZE
+    col = (y  )//SQUARE_SIZE
     return col, row
 
 def main():
