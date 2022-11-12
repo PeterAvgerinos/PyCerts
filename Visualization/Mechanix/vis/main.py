@@ -1,5 +1,6 @@
 import pygame
-from mecanix.constants import SQUARE_SIZE, WIDTH, HEIGHT, MOUNT_SIZE
+import math
+from mecanix.constants import SQUARE_SIZE, WIDTH, HEIGHT, MOUNT_SIZE, ROWS
 from mecanix.board import Board
 from mecanix.game import Game
 
@@ -11,44 +12,8 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Mecanix: The Gear Game')
 
 def get_pos_from_mouse(pos):
-    x, y = pos
-    if (660 <= x <= 739) & (53 <= y <= 131):
-        row, col = 0, 0
-        return col, row
-    elif (134 <= y <= 211):
-        if (621 <= x <= 699):
-            row, col = 1,0
-            return col, row
-        elif (702 <= x <= 777):
-            row, col = 1,1
-            return col, row
-    elif (215 <= y <= 290):
-        if (581 <= x <= 658):
-            row, col = 2,0
-            return col, row
-        elif (663 <= x <= 737):
-            row, col = 2,1
-            return col, row
-        elif (745 <= x <= 817):
-            row, col = 2,2
-            return col, row
-    elif (295 <= y <= 369):
-        if (541 <= x <= 618):
-            row, col = 3,0
-            return col, row
-        elif (622 <= x <= 696):
-            row, col = 3,1
-            return col, row
-        elif (703 <= x <=774):
-            row, col = 3,2
-            return col, row
-        elif (785 <= x <= 857):
-            row, col = 3,3
-            return col, row
-    else:
-        row = x*SQUARE_SIZE
-        col = y*SQUARE_SIZE
-        return col, row
+    a, b = pos
+
 
 def main():
     run = True
@@ -66,10 +31,16 @@ def main():
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 try:
-                    pos = pygame.mouse.get_pos()
-                    print(pos)
-                    row, col = get_pos_from_mouse(pos)
-                    gear = board.get_gear(row, col)
+                    ROW, COL = 0,0
+                    m_x, m_y = pygame.mouse.get_pos()
+                    for row in range(ROWS):
+                        for col in range(row + 1):
+                            center_x, center_y = board.get_gear(row, col).x, board.get_gear(row, col).y
+                            dis = math.sqrt((center_x - m_x)**2 + (center_y - m_y)**2)
+                            if dis < SQUARE_SIZE//2:
+                                ROW, COL = row, col
+                    print(ROW, COL)
+                    gear = board.get_gear(ROW, COL)
                     # print(gear.x, gear.y)
                     board.move(gear, 'green', WIN)
                 except TypeError:
