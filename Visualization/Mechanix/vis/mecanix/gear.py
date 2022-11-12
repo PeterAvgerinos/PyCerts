@@ -35,6 +35,7 @@ class Gear(pygame.sprite.Sprite):
             self.image = pygame.transform.scale(self.image, (SQUARE_SIZE, SQUARE_SIZE))
             self.rect = self.image.get_rect()
             self.rect.center = (self.x, self.y)
+            self.make_jammed()
         elif self.color == 'green':
             self.image = GREENGEAR
             self.image = pygame.transform.scale(self.image, (SQUARE_SIZE, SQUARE_SIZE))
