@@ -1,5 +1,5 @@
 import pygame
-from .constants import BLACK, BLUEGEAR, RED, TARGETGEAR, TRANSPARENT, WIDTH, SQUARE_SIZE, MOUNT_SIZE, ROWS, BLUEGEAR, TARGETGEAR
+from .constants import BLACK, RED, TARGETGEAR, TRANSPARENT, WIDTH, SQUARE_SIZE, MOUNT_SIZE, ROWS, BLUEGEAR, TARGETGEAR, GREENGEAR
 from .gear import Gear
 
 class Board(pygame.sprite.Sprite):
@@ -40,20 +40,20 @@ class Board(pygame.sprite.Sprite):
                 if row != 0:
                     new_gear = Gear(row, col, 'transparent', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*row,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, TRANSPARENT)
                     if row == ROWS - 1:
-                        if col == 0 or col == ROWS-1:
+                        if col == 0:
+                            new_gear = Gear(row, col, 'blue', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*row,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, BLUEGEAR)
+                            new_gear.make_fixed()
+                        elif col == ROWS-1:
+                            new_gear = Gear(row, col, 'green', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*row,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, GREENGEAR)
                             new_gear.make_fixed()
                 else:
-                    new_gear = Gear(row, col, 'transparent', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, TRANSPARENT)
+                    new_gear = Gear(row, col, 'target', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, TARGETGEAR)
                     new_gear.make_fixed()
                 self.board[row].append(new_gear)
                 self.gear_group.add(new_gear)
-                # new_gear.draw(win)
         self.gear_group.draw(win)
 
     def update_board(self, win):
-        # for row in range(ROWS):
-        #     for col in range(row + 1):
-        #         self.board[row][col].draw(win)
         self.gear_group.draw(win)
 
     def move(self, gear, color, win):
