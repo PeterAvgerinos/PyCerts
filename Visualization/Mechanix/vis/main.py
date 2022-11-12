@@ -17,6 +17,7 @@ def main():
     # board.draw_gear_mounts(WIN)
     board.create_board(WIN)
     board.move(board.get_gear(2,2), 'green', WIN)
+    board.move(board.get_gear(2,2), 'transparent', WIN)
 
     while run:
         clock.tick(FPS)
