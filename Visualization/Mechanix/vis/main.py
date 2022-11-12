@@ -12,8 +12,8 @@ pygame.display.set_caption('Mecanix: The Gear Game')
 
 def get_pos_from_mouse(pos):
     x, y = pos
-    row = (x - 300)//SQUARE_SIZE
-    col = (y  )//SQUARE_SIZE
+    row = x*SQUARE_SIZE
+    col = y*SQUARE_SIZE
     return col, row
 
 def main():
@@ -26,7 +26,6 @@ def main():
     board.move(board.get_gear(4,2), 'green', WIN)
     board.move(board.get_gear(5,2), 'green', WIN)
     board.move(board.get_gear(6,2), 'green', WIN)
-    print(board)
 
     while run:
         clock.tick(FPS)
