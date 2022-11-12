@@ -12,19 +12,20 @@ pygame.display.set_caption('Mecanix: The Gear Game')
 
 def get_pos_from_mouse(pos):
     x, y = pos
-    row = x//SQUARE_SIZE
-    col = y//SQUARE_SIZE
+    row = y//SQUARE_SIZE
+    col = x//SQUARE_SIZE
     return col, row
 
 def main():
     run = True
     clock = pygame.time.Clock()
-    game = Game(WIN)
-    # board.create_board(WIN)
-    # board.move(board.get_gear(3,2), 'green', WIN)
-    # board.move(board.get_gear(4,2), 'green', WIN)
-    # board.move(board.get_gear(5,2), 'green', WIN)
-    # board.move(board.get_gear(6,2), 'green', WIN)
+    # game = Game(WIN)
+    board = Board()
+    board.create_board(WIN)
+    board.move(board.get_gear(3,2), 'green', WIN)
+    board.move(board.get_gear(4,2), 'green', WIN)
+    board.move(board.get_gear(5,2), 'green', WIN)
+    board.move(board.get_gear(6,2), 'green', WIN)
 
     while run:
         clock.tick(FPS)
@@ -38,15 +39,16 @@ def main():
                     pos = pygame.mouse.get_pos()
                     print(pos)
                     row, col = get_pos_from_mouse(pos)
-                    # gear = board.get_gear(row, col)
-                    # print(gear.x, gear.y)
-                    # board.move(gear, 'green', WIN)
+                    gear = board.get_gear(row, col)
+                    print(gear.x, gear.y)
+                    board.move(gear, 'green', WIN)
                 except TypeError:
                     pass
                 except IndexError:
                     pass
 
-        game.update()
+        board.update_board(WIN)
+        pygame.display.update()
 
 
     pygame.quit()
