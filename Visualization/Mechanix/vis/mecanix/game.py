@@ -9,6 +9,7 @@ class Game:
     def _init(self):
         self.selected = None
         self.board = Board()
+        self.board.create_board(self.win)
         self.turn = 'blue'
         self.valid_moves = {}
 
