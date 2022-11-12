@@ -20,9 +20,6 @@ def main():
     board.move(board.get_gear(2,2), 'blue', WIN)
     board.move(board.get_gear(2,2), 'transparent', WIN)
 
-    board.move(board.get_gear(9,0), 'transparent', WIN)
-
-
     while run:
         clock.tick(FPS)
 
