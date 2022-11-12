@@ -3,11 +3,13 @@ from .constants import BLACK, RED, TARGETGEAR, TRANSPARENT, WIDTH, SQUARE_SIZE, 
 from .gear import Gear
 
 class Board(pygame.sprite.Sprite):
-    def __init__(self):
+    def __init__(self, win):
         self.board = []
         self.gear_group = pygame.sprite.Group()
         self.selected_gear = None
         self.green_left = self.blue_left = 12
+        self.win = win
+        self.create_board(win)
 
     def __repr__(self):
         for row in range(ROWS):
