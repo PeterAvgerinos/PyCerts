@@ -32,10 +32,19 @@ class Gear(pygame.sprite.Sprite):
         self.color = color
         if self.color == 'transparent':
             self.image = TRANSPARENT
+            self.image = pygame.transform.scale(self.image, (SQUARE_SIZE, SQUARE_SIZE))
+            self.rect = self.image.get_rect()
+            self.rect.center = (self.x, self.y)
         elif self.color == 'green':
             self.image = GREENGEAR
+            self.image = pygame.transform.scale(self.image, (SQUARE_SIZE, SQUARE_SIZE))
+            self.rect = self.image.get_rect()
+            self.rect.center = (self.x, self.y)
         elif self.color == 'blue':
             self.image = BLUEGEAR
+            self.image = pygame.transform.scale(self.image, (SQUARE_SIZE, SQUARE_SIZE))
+            self.rect = self.image.get_rect()
+            self.rect.center = (self.x, self.y)
 
     def set_pos(self, x, y):
         self.x = x
