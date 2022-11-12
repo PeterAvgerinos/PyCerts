@@ -26,6 +26,7 @@ def main():
     board.move(board.get_gear(4,2), 'green', WIN)
     board.move(board.get_gear(5,2), 'green', WIN)
     board.move(board.get_gear(6,2), 'green', WIN)
+    print(board)
 
     while run:
         clock.tick(FPS)

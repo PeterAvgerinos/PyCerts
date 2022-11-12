@@ -11,6 +11,7 @@ class Board(pygame.sprite.Sprite):
 
     def __repr__(self):
         for row in range(ROWS):
+            print('row = ',row)
             for col in range(row + 1):
                 print(self.board[row][col])
 
