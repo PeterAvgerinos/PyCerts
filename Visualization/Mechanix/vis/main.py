@@ -11,8 +11,6 @@ pygame.display.set_caption('Mecanix: The Gear Game')
 
 def get_pos_from_mouse(pos):
     x, y = pos
-    # row = y//SQUARE_SIZE
-    # col = x//SQUARE_SIZE
     row = WIDTH//2 - SQUARE_SIZE//2 - (y - x)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*y
     col = SQUARE_SIZE*y + 2*MOUNT_SIZE + 50,
     return col, row
@@ -40,7 +38,8 @@ def main():
                     print(pos)
                     row, col = get_pos_from_mouse(pos)
                     gear = board.get_gear(row, col)
-                    board.move(gear, 'transparent', WIN)
+                    print(gear.x, gear.y)
+                    board.move(gear, 'green', WIN)
                 except TypeError:
                     pass
 
