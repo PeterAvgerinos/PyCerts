@@ -36,3 +36,9 @@ class Game:
 
     def move(self, row, col):
         pass
+
+    def change_turn(self):
+        if self.turn == 'blue':
+            self.turn = 'green'
+        else:
+            self.turn = 'blue'
