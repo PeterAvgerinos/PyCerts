@@ -1,5 +1,5 @@
 import pygame
-from mecanix.constants import SQUARE_SIZE, WIDTH, HEIGHT
+from mecanix.constants import SQUARE_SIZE, WIDTH, HEIGHT, MOUNT_SIZE
 from mecanix.board import Board
 
 pygame.init()
@@ -11,8 +11,10 @@ pygame.display.set_caption('Mecanix: The Gear Game')
 
 def get_pos_from_mouse(pos):
     x, y = pos
-    row = y//SQUARE_SIZE
-    col = x//SQUARE_SIZE
+    # row = y//SQUARE_SIZE
+    # col = x//SQUARE_SIZE
+    row = WIDTH//2 - SQUARE_SIZE//2 - (y - x)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*y
+    col = SQUARE_SIZE*y + 2*MOUNT_SIZE + 50,
     return col, row
 
 def main():
@@ -33,10 +35,14 @@ def main():
                 run = False
 
             if event.type == pygame.MOUSEBUTTONDOWN:
-                pos = pygame.mouse.get_pos()
-                row, col = get_pos_from_mouse(pos)
-                gear = board.get_gear(row, col)
-                board.move(gear, 'transparent', WIN)
+                try:
+                    pos = pygame.mouse.get_pos()
+                    print(pos)
+                    row, col = get_pos_from_mouse(pos)
+                    gear = board.get_gear(row, col)
+                    board.move(gear, 'transparent', WIN)
+                except TypeError:
+                    pass
 
         board.update(WIN)
         pygame.display.update()
