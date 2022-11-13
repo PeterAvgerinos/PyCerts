@@ -29,8 +29,6 @@ def main():
     run = True
     clock = pygame.time.Clock()
     game = Game(WIN)
-    # board = Board()
-    # board.create_board(WIN)
 
     while run:
         clock.tick(FPS)
@@ -40,15 +38,9 @@ def main():
                 run = False
 
             if event.type == pygame.MOUSEBUTTONDOWN:
-                try:
-                    row, col = convert_pos(ROWS, game.board)
-                    gear = game.board.get_gear(row, col)
-                    # print(gear.x, gear.y)
-                    game.board.move(gear, 'green', WIN)
-                except TypeError:
-                    pass
-                except IndexError:
-                    pass
+                row, col = convert_pos(ROWS, game.board)
+                gear = game.board.get_gear(row, col)
+                game.board.move(gear, 'green', WIN)
 
         game.update()
 
