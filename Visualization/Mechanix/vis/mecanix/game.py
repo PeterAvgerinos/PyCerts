@@ -25,7 +25,7 @@ class Game:
     def quit(self):
         pygame.quit()
 
-    def select(self, row, col):
+    def move(self, row, col):
         gear = self.board.get_gear(row, col)
         if gear.fixed:
             print('oopsie daisy this gear is fixed to the board')
@@ -39,36 +39,12 @@ class Game:
             print(self.turn, 'is playing')
             self.change_turn()
 
-
-
-
-    # def select(self, row, col):
-    #     if self.selected:
-    #         result = self._move(row, col)
-    #         if not result:
-    #             self.selected = None
-    #             self.select(row, col)
-    #     else:
-    #         gear = self.board.get_gear(row, col)
-    #         if gear.color == 'transparent':
-    #             self.selected = gear
-    #             self._move(row, col)
-    #             # self.valid_moves = self.board.get_valid_moves(gear)
-    #             return True
-    #     return False
-
-
     def _move(self, row, col):
         gear = self.board.get_gear(row, col)
         if self.selected and gear == 'transparent':
             self.board.move(gear, self.turn, self.win)
         elif self.selected and gear.color == self.turn:
             self.board.move(gear, 'transparent', self.win)
-
-    def move(self, row, col):
-        gear = self.board.get_gear(row, col)
-        if self.selected and gear == 'transparent':
-            self.board.move(gear, self.turn, self.win)
 
     def change_turn(self):
         if self.turn == 'blue':

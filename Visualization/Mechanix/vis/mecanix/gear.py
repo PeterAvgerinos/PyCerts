@@ -1,4 +1,4 @@
-from .constants import SQUARE_SIZE, RED, TRANSPARENT, WHITE, BLUEGEAR, GREENGEAR, TARGETGEAR
+from .constants import SQUARE_SIZE, TRANSPARENT, BLUEGEAR, GREENGEAR
 import pygame
 
 class Gear(pygame.sprite.Sprite):
@@ -11,6 +11,7 @@ class Gear(pygame.sprite.Sprite):
         self.row = row
         self.col = col
         self.color = color
+        self.previous = 'transparent'
         self.occupied = False
         self.jammed = False
         self.fixed = False
@@ -38,7 +39,6 @@ class Gear(pygame.sprite.Sprite):
             self.rect.center = (self.x, self.y)
             self.make_jammed()
             self.make_occupied()
-
         elif self.color == 'green':
             self.image = GREENGEAR
             self.image = pygame.transform.scale(self.image, (SQUARE_SIZE, SQUARE_SIZE))

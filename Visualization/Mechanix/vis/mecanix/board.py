@@ -43,12 +43,15 @@ class Board(pygame.sprite.Sprite):
                     if row == ROWS - 1:
                         if col == 0:
                             new_gear = Gear(row, col, 'blue', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*row,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, BLUEGEAR)
+                            new_gear.previous = new_gear.color
                             new_gear.make_fixed()
                         elif col == ROWS-1:
                             new_gear = Gear(row, col, 'green', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE + (SQUARE_SIZE//2)*row,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, GREENGEAR)
+                            new_gear.previous = new_gear.color
                             new_gear.make_fixed()
                 else:
                     new_gear = Gear(row, col, 'target', WIDTH//2 - SQUARE_SIZE//2 - (row - col)*SQUARE_SIZE + 2*MOUNT_SIZE,  SQUARE_SIZE*row + 2*MOUNT_SIZE + 50, TARGETGEAR)
+                    new_gear.previous = new_gear.color
                     new_gear.make_fixed()
                 self.board[row].append(new_gear)
                 self.gear_group.add(new_gear)

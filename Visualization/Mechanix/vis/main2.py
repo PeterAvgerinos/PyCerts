@@ -1,6 +1,5 @@
 import pygame
 from mecanix.constants import WIDTH, HEIGHT, ROWS
-# from mecanix.board import Board
 from mecanix.game import Game
 
 pygame.init()
@@ -24,12 +23,12 @@ def main():
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 row, col = game.convert_pos(ROWS)
-                game.select(row, col)
+                game.move(row, col)
 
         game.update()
 
 
-    pygame.quit()
+    game.quit()
 
 main()
 
