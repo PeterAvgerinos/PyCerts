@@ -3,8 +3,8 @@ from .board import Board
 
 class Game:
     def __init__(self, win):
-        self._init()
         self.win = win
+        self._init()
 
     def _init(self):
         self.selected = None
@@ -19,6 +19,9 @@ class Game:
 
     def reset(self):
         self._init()
+
+    def quit(self):
+        pygame.quit()
 
     def select(self, row, col):
         if self.selected:

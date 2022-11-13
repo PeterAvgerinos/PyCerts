@@ -6,7 +6,6 @@ class Board(pygame.sprite.Sprite):
     def __init__(self):
         self.board = []
         self.gear_group = pygame.sprite.Group()
-        self.selected_gear = None
         self.green_left = self.blue_left = 12
 
     def __repr__(self):
