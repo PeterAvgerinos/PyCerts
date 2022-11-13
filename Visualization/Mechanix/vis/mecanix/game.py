@@ -25,21 +25,22 @@ class Game:
 
     def select(self, row, col):
         if self.selected:
-            result = self.move(row, col)
+            result = self._move(row, col, self.turn)
             if not result:
                 self.selected = None
                 self.select(row, col)
         else:
             gear = self.board.get_gear(row, col)
-            if gear != None and gear.color == self.turn:
+            if gear != None and gear.color == 'transparent':
                 self.selected = gear
-                self.valid_moves = self.board.get_valid_moves(gear)
+                # self.valid_moves = self.board.get_valid_moves(gear)
                 return True
         return False
 
 
-    def move(self, row, col):
-        pass
+    def _move(self, row, col, color):
+        gear = self.board.get_gear(row, col)
+        if self.selected and gear == 'transparent'
 
     def change_turn(self):
         if self.turn == 'blue':
