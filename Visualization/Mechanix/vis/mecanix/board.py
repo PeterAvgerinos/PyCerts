@@ -1,4 +1,5 @@
 import pygame
+import math
 from .constants import BLACK, RED, TARGETGEAR, TRANSPARENT, WIDTH, SQUARE_SIZE, MOUNT_SIZE, ROWS, BLUEGEAR, TARGETGEAR, GREENGEAR
 from .gear import Gear
 

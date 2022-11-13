@@ -1,5 +1,7 @@
 import pygame
+import math
 from .board import Board
+from .constants import SQUARE_SIZE
 
 class Game:
     def __init__(self, win):
@@ -73,3 +75,15 @@ class Game:
             self.turn = 'green'
         else:
             self.turn = 'blue'
+
+    def convert_pos(self, ROWS):
+        ROW, COL = 0,0
+        m_x, m_y = pygame.mouse.get_pos()
+        for row in range(ROWS):
+            for col in range(row + 1):
+                center_x, center_y = self.board.get_gear(row, col).x, self.board.get_gear(row, col).y
+                dis = math.sqrt((center_x - m_x)**2 + (center_y - m_y)**2)
+                if dis < SQUARE_SIZE//2:
+                    ROW, COL = row, col
+        print(ROW, COL)
+        return ROW, COL
