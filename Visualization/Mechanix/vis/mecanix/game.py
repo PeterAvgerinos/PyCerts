@@ -27,9 +27,10 @@ class Game:
         gear = self.board.get_gear(row, col)
         self.selected = gear
         if gear.fixed:
-            pass
+            print('oopsie daisy this gear is fixed to the board')
         elif gear.occupied:
-            pass
+            if self.turn == gear.color:
+                self.board.move(row, col, 'transparent')
         else:
             self._move(row, col)
             print(self.turn, 'is playing')
