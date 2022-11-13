@@ -31,6 +31,9 @@ class Game:
             pass
         else:
             self._move(row, col)
+            print(self.turn, 'is playing')
+            self.change_turn()
+
 
 
 
