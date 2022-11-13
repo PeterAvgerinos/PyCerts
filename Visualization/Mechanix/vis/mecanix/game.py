@@ -25,6 +25,7 @@ class Game:
 
     def select(self, row, col):
         gear = self.board.get_gear(row, col)
+        self.selected = gear
         if gear.fixed:
             pass
         elif gear.occupied:
