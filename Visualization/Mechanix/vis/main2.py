@@ -39,8 +39,8 @@ def main():
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 row, col = convert_pos(ROWS, game.board)
-                gear = game.board.get_gear(row, col)
-                game.board.move(gear, 'green', WIN)
+                game.select(row, col)
+                # game.board.move(gear, 'green', WIN)
 
         game.update()
 
