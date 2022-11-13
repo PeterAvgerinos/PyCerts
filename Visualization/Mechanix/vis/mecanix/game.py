@@ -25,14 +25,15 @@ class Game:
 
     def select(self, row, col):
         gear = self.board.get_gear(row, col)
-        self.selected = gear
         if gear.fixed:
             print('oopsie daisy this gear is fixed to the board')
         elif gear.occupied:
             if self.turn == gear.color:
-                self.board.move(row, col, 'transparent')
+                self.board.move(gear, 'transparent', self.win)
+            else:
+                print("you can\'t place this here")
         else:
-            self._move(row, col)
+            self.board.move(gear, self.turn, self.win)
             print(self.turn, 'is playing')
             self.change_turn()
 
