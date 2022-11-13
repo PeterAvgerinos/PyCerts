@@ -20,8 +20,6 @@ def convert_pos(ROWS, board):
     print(ROW, COL)
     return ROW, COL
 
-
-
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Mecanix: The Gear Game')
 

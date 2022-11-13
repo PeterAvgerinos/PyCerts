@@ -11,6 +11,7 @@ class Gear(pygame.sprite.Sprite):
         self.row = row
         self.col = col
         self.color = color
+        self.occupied = False
         self.jammed = False
         self.fixed = False
         self.x = x
@@ -41,11 +42,13 @@ class Gear(pygame.sprite.Sprite):
             self.image = pygame.transform.scale(self.image, (SQUARE_SIZE, SQUARE_SIZE))
             self.rect = self.image.get_rect()
             self.rect.center = (self.x, self.y)
+            self.make_occupied()
         elif self.color == 'blue':
             self.image = BLUEGEAR
             self.image = pygame.transform.scale(self.image, (SQUARE_SIZE, SQUARE_SIZE))
             self.rect = self.image.get_rect()
             self.rect.center = (self.x, self.y)
+            self.make_occupied()
 
     def set_pos(self, x, y):
         self.x = x
@@ -56,6 +59,9 @@ class Gear(pygame.sprite.Sprite):
 
     def make_fixed(self):
         self.fixed = True
+
+    def make_occupied(self):
+        self.occupied = True
 
     def draw(self, win):
         # pygame.draw.rect(win, RED, (self.x, self.y, SQUARE_SIZE//4, SQUARE_SIZE//4))
