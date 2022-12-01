@@ -39,13 +39,6 @@ class Game:
             print(self.turn, 'is playing')
             self.change_turn()
 
-    def _move(self, row, col):
-        gear = self.board.get_gear(row, col)
-        if self.selected and gear == 'transparent':
-            self.board.move(gear, self.turn, self.win)
-        elif self.selected and gear.color == self.turn:
-            self.board.move(gear, 'transparent', self.win)
-
     def change_turn(self):
         if self.turn == 'blue':
             self.turn = 'green'
